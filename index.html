@@ -4,14 +4,12 @@
   <meta charset="UTF-8" />
   <title>SNBET® | EasyFull® — Golden Zipper Industrial Group</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-        content="Golden Zipper Industrial Group integrates SNBET® zippers and EasyFull® packaging & hangers to provide one-stop trims and packaging solutions for global apparel brands." />
+  <meta name="description" content="SNBET zippers + EasyFull packaging & hangers. One-stop trims and packaging solutions for global apparel brands." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg:#ffffff;
@@ -20,14 +18,15 @@
       --muted:#64748b;
       --line:#e5e7eb;
       --nav:#0b1220;
-      --nav2:#111a2e;
+      --nav2:#101a33;
       --primary:#d6001c;
       --primary2:#9f0417;
-      --card:#ffffff;
-      --shadow:0 18px 45px rgba(15, 23, 42, 0.10);
+      --shadow:0 18px 45px rgba(15,23,42,.10);
+      --shadow2:0 10px 28px rgba(15,23,42,.08);
       --radius:14px;
-      --max:1120px;
+      --max:1160px;
     }
+
     *{box-sizing:border-box;margin:0;padding:0}
     body{
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
@@ -35,170 +34,199 @@
     }
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
+    html{scroll-behavior:smooth}
 
-    /* ===== Top utility bar (language + quick links) ===== */
+    /* ===== Top Utility Bar (Language + quick links) ===== */
     .topbar{
       background:var(--nav);
       color:#e5e7eb;
-      font-size:.85rem;
-      border-bottom:1px solid rgba(255,255,255,.08);
+      font-size:.86rem;
+      border-bottom:1px solid rgba(255,255,255,.10);
     }
     .topbar .inner{
-      max-width:var(--max); margin:0 auto;
+      max-width:var(--max);
+      margin:0 auto;
       padding:.55rem 1.1rem;
-      display:flex; align-items:center; justify-content:space-between; gap:1rem;
-      flex-wrap:wrap;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:1rem; flex-wrap:wrap;
     }
-    .topbar .left, .topbar .right{display:flex; align-items:center; gap:.8rem; flex-wrap:wrap}
+    .top-left,.top-right{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap}
     .pill{
-      display:inline-flex; align-items:center; gap:.4rem;
-      padding:.22rem .6rem;
+      display:inline-flex;align-items:center;gap:.45rem;
+      padding:.22rem .6rem;border-radius:999px;
       border:1px solid rgba(255,255,255,.16);
-      border-radius:999px;
-      color:#e5e7eb;
       background:rgba(255,255,255,.06);
-      font-size:.78rem;
+      font-size:.78rem;color:#e5e7eb;
     }
-    .lang a{
-      color:#e5e7eb; opacity:.85; margin-right:.55rem;
-    }
+    .lang a{opacity:.85;margin-right:.55rem}
     .lang a:hover{opacity:1;text-decoration:underline}
-    .quick a{opacity:.85}
-    .quick a:hover{opacity:1;text-decoration:underline}
+    .top-right a{opacity:.85}
+    .top-right a:hover{opacity:1;text-decoration:underline}
+    .sep{opacity:.35}
 
-    /* ===== Main nav (product center style) ===== */
+    /* ===== Header / Main Nav ===== */
     header{
-      position:sticky; top:0; z-index:20;
-      background:linear-gradient(180deg,var(--nav2),#0b1220);
-      border-bottom:1px solid rgba(255,255,255,.08);
+      position:sticky; top:0; z-index:30;
+      background:linear-gradient(180deg,var(--nav2),var(--nav));
+      border-bottom:1px solid rgba(255,255,255,.10);
     }
     .nav{
-      max-width:var(--max); margin:0 auto;
+      max-width:var(--max);
+      margin:0 auto;
       padding:.9rem 1.1rem;
-      display:flex; align-items:center; justify-content:space-between; gap:1rem;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:1rem;
     }
-    .brand{
-      display:flex; align-items:center; gap:.75rem;
-    }
+    .brand{display:flex;align-items:center;gap:.75rem}
     .logo{
-      width:40px;height:40px;border-radius:10px;
+      width:42px;height:42px;border-radius:10px;
       background:linear-gradient(135deg,var(--primary),var(--primary2));
       display:flex;align-items:center;justify-content:center;
-      color:#fff;font-weight:800;font-family:Montserrat,sans-serif;
+      color:#fff;font-weight:900;font-family:Montserrat,sans-serif;
       box-shadow:0 14px 30px rgba(214,0,28,.25);
+      letter-spacing:.06em;
     }
-    .brand .name{
-      color:#fff;
-      font-family:Montserrat,sans-serif;
-      font-weight:700;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      font-size:.92rem;
-      line-height:1.1;
+    .bname{
+      color:#fff;font-family:Montserrat,sans-serif;
+      font-weight:800;letter-spacing:.10em;text-transform:uppercase;
+      font-size:.92rem;line-height:1.1;
     }
-    .brand .sub{
-      color:#cbd5e1;
-      font-size:.78rem;
-      margin-top:.15rem;
-    }
+    .bsub{color:#cbd5e1;font-size:.78rem;margin-top:.15rem}
 
-    .menu{display:flex; align-items:center; gap:1.1rem; flex-wrap:wrap; justify-content:flex-end}
-    .menu > .item{
+    .menu{
+      display:flex;align-items:center;gap:1.05rem;flex-wrap:wrap;justify-content:flex-end
+    }
+    .menu .item{
       position:relative;
       color:#e5e7eb;
-      font-size:.9rem;
-      opacity:.9;
+      font-size:.92rem;
+      opacity:.92;
       padding:.35rem .1rem;
+      cursor:pointer;
+      user-select:none;
     }
-    .menu > .item:hover{opacity:1}
-    .menu > .item::after{
+    .menu .item:hover{opacity:1}
+    .menu .item::after{
       content:"";
-      position:absolute; left:0; bottom:-8px;
-      height:2px; width:0;
+      position:absolute;left:0;bottom:-10px;height:2px;width:0;
       background:linear-gradient(to right,#fb7185,#fbbf24);
       transition:width .2s ease;
     }
-    .menu > .item:hover::after{width:100%}
+    .menu .item:hover::after{width:100%}
+    .cta{
+      padding:.48rem .95rem;
+      border-radius:999px;
+      background:var(--primary);
+      color:#fff;font-weight:700;font-size:.86rem;
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .cta:hover{background:var(--primary2)}
 
     /* Dropdown */
+    .has-dd{padding-right:.3rem}
     .dropdown{
       position:absolute;
       top:42px; left:0;
-      min-width:280px;
-      background:#ffffff;
+      min-width:300px;
+      background:#fff;
       border:1px solid var(--line);
       border-radius:14px;
       box-shadow:var(--shadow);
-      padding:.75rem;
+      padding:.8rem;
       display:none;
     }
     .has-dd:hover .dropdown{display:block}
     .dd-title{
       font-family:Montserrat,sans-serif;
-      font-weight:700;
-      font-size:.85rem;
-      color:var(--text);
-      margin:.2rem 0 .45rem;
+      font-weight:800;
+      font-size:.82rem;
       text-transform:uppercase;
-      letter-spacing:.08em;
-    }
-    .dd-grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:.35rem;
-    }
-    .dd-link{
-      padding:.5rem .55rem;
-      border-radius:10px;
-      border:1px solid transparent;
+      letter-spacing:.10em;
       color:var(--text);
-      font-size:.9rem;
+      margin:.2rem 0 .55rem;
     }
-    .dd-link:hover{
-      border-color:var(--line);
-      background:var(--bg-soft);
+    .dd-grid{display:grid;grid-template-columns:1fr;gap:.35rem}
+    .dd-link{
+      padding:.55rem .6rem;border-radius:10px;
+      border:1px solid transparent;
+      color:var(--text);font-size:.92rem;
     }
-    .cta{
-      padding:.45rem .9rem;
-      border-radius:999px;
-      background:var(--primary);
-      color:#fff;
-      font-weight:600;
-      font-size:.85rem;
-      border:1px solid rgba(255,255,255,.12);
-    }
-    .cta:hover{background:var(--primary2)}
+    .dd-link:hover{border-color:var(--line);background:var(--bg-soft)}
 
-    /* ===== Hero ===== */
+    /* Mobile menu */
+    .burger{
+      display:none;
+      width:42px;height:38px;border-radius:10px;
+      border:1px solid rgba(255,255,255,.20);
+      background:rgba(255,255,255,.06);
+      color:#fff;
+      align-items:center;justify-content:center;
+      font-weight:800;
+      cursor:pointer;
+    }
+    .mobile-panel{
+      display:none;
+      background:#0b1220;
+      border-top:1px solid rgba(255,255,255,.10);
+    }
+    .mobile-panel .inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:.85rem 1.1rem 1.1rem;
+      display:grid; gap:.35rem;
+    }
+    .m-link{
+      padding:.65rem .7rem;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.05);
+      color:#e5e7eb;
+      font-weight:600;
+    }
+    .m-link:hover{background:rgba(255,255,255,.08)}
+    .mobile-panel.show{display:block}
+
+    /* ===== Hero (two-message banner like the sample site) ===== */
     .hero{
       background:
-        radial-gradient(circle at 15% 0%, rgba(214,0,28,.12), transparent 50%),
-        radial-gradient(circle at 85% 0%, rgba(59,130,246,.10), transparent 55%),
-        linear-gradient(180deg,#0b1220 0%, #0b1220 60%, #ffffff 60%, #ffffff 100%);
-      padding:3.2rem 1.1rem 0;
+        radial-gradient(circle at 15% 0%, rgba(214,0,28,.14), transparent 55%),
+        radial-gradient(circle at 85% 0%, rgba(59,130,246,.12), transparent 55%),
+        linear-gradient(180deg,#0b1220 0%, #0b1220 68%, #ffffff 68%, #ffffff 100%);
+      padding:2.9rem 1.1rem 0;
     }
-    .hero .inner{
-      max-width:var(--max); margin:0 auto;
+    .hero .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding-bottom:2.2rem;
       display:grid;
       grid-template-columns:minmax(0,3fr) minmax(0,2fr);
-      gap:2rem;
+      gap:1.7rem;
       align-items:start;
-      padding-bottom:2.2rem;
+    }
+    .hero-split{
+      display:grid;
+      gap:1.1rem;
+      margin-bottom:1.1rem;
+    }
+    .hero-block{
+      border-left:3px solid rgba(255,255,255,.18);
+      padding-left:1rem;
     }
     .kicker{
       color:#cbd5e1;
       text-transform:uppercase;
       letter-spacing:.22em;
       font-size:.78rem;
-      font-weight:600;
-      margin-bottom:.65rem;
+      font-weight:700;
+      margin-bottom:.55rem;
     }
     h1{
       font-family:Montserrat,sans-serif;
-      font-size:clamp(2.0rem, 3.4vw, 2.7rem);
+      font-size:clamp(2.0rem, 3.4vw, 2.65rem);
       line-height:1.12;
       color:#fff;
-      margin-bottom:.9rem;
+      margin-bottom:.75rem;
+      letter-spacing:-.01em;
     }
     .accent{
       background:linear-gradient(to right,#fb7185,#fbbf24);
@@ -208,45 +236,39 @@
     .hero p{
       color:#e2e8f0;
       opacity:.92;
-      max-width:42rem;
-      margin-bottom:1.25rem;
+      max-width:46rem;
       font-size:.98rem;
     }
-    .badges{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.4rem}
+    .badges{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.1rem}
     .badge{
       display:inline-flex;align-items:center;gap:.45rem;
-      padding:.26rem .7rem;
-      border-radius:999px;
+      padding:.26rem .72rem;border-radius:999px;
       border:1px solid rgba(255,255,255,.18);
       background:rgba(255,255,255,.06);
       color:#e5e7eb;
       font-size:.8rem;
+      font-weight:600;
     }
     .dot{width:7px;height:7px;border-radius:999px;background:#22c55e}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:.75rem}
+
+    .hero-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.25rem}
     .btn1{
-      padding:.7rem 1.25rem;
-      border-radius:999px;
-      background:var(--primary);
-      color:#fff;
-      font-weight:600;
-      border:none;
-      cursor:pointer;
+      padding:.72rem 1.25rem;border-radius:999px;
+      background:var(--primary);color:#fff;font-weight:800;
+      border:none;cursor:pointer;
+      box-shadow:0 16px 34px rgba(214,0,28,.25);
     }
     .btn1:hover{background:var(--primary2)}
     .btn2{
-      padding:.68rem 1.2rem;
-      border-radius:999px;
-      background:transparent;
-      color:#fff;
-      font-weight:600;
+      padding:.7rem 1.2rem;border-radius:999px;
+      background:transparent;color:#fff;font-weight:800;
       border:1px solid rgba(255,255,255,.25);
       cursor:pointer;
     }
     .btn2:hover{background:rgba(255,255,255,.08)}
 
     .hero-card{
-      background:#ffffff;
+      background:#fff;
       border-radius:18px;
       border:1px solid var(--line);
       box-shadow:var(--shadow);
@@ -254,18 +276,14 @@
     }
     .hero-card .title{
       font-family:Montserrat,sans-serif;
-      font-weight:700;
-      font-size:.95rem;
-      letter-spacing:.08em;
+      font-weight:900;
+      font-size:.9rem;
+      letter-spacing:.10em;
       text-transform:uppercase;
       margin-bottom:.15rem;
     }
     .hero-card .sub{color:var(--muted);font-size:.86rem;margin-bottom:.85rem}
-    .metrics{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:.8rem;
-    }
+    .metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
     .m{
       border:1px solid var(--line);
       border-radius:14px;
@@ -273,79 +291,89 @@
       background:var(--bg-soft);
     }
     .m .l{color:var(--muted);font-size:.78rem}
-    .m .v{font-family:Montserrat,sans-serif;font-weight:800;font-size:1.05rem}
+    .m .v{font-family:Montserrat,sans-serif;font-weight:900;font-size:1.05rem}
     .m .n{color:var(--muted);font-size:.78rem}
 
-    /* ===== Common section styles ===== */
+    /* ===== Sections ===== */
     section{padding:3.5rem 1.1rem}
-    .wrap{max-width:var(--max); margin:0 auto}
+    .wrap{max-width:var(--max);margin:0 auto}
     .label{
       font-size:.78rem;
       letter-spacing:.22em;
       text-transform:uppercase;
       color:var(--muted);
       margin-bottom:.35rem;
-      font-weight:600;
+      font-weight:800;
     }
     .title{
       font-family:Montserrat,sans-serif;
       font-size:1.55rem;
-      font-weight:700;
+      font-weight:900;
       margin-bottom:.55rem;
+      letter-spacing:-.01em;
     }
-    .intro{color:var(--muted); max-width:46rem}
+    .intro{color:var(--muted);max-width:52rem}
 
-    /* ===== “New Arrivals” product grid (like their 新品展示) ===== */
     .soft{background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
-    .tabs{
-      display:flex; flex-wrap:wrap; gap:.55rem;
-      margin-top:1.1rem;
-    }
+
+    /* ===== Showcase (New) with tabs (like sample site) ===== */
+    .tabs{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.15rem}
     .tab{
-      padding:.35rem .8rem;
-      border-radius:999px;
+      padding:.36rem .86rem;border-radius:999px;
       border:1px solid var(--line);
-      background:#fff;
-      color:var(--muted);
-      font-size:.85rem;
+      background:#fff;color:var(--muted);
+      font-size:.88rem;font-weight:700;
       cursor:pointer;
     }
     .tab.active{
       border-color:rgba(214,0,28,.35);
       background:rgba(214,0,28,.06);
       color:var(--text);
-      font-weight:600;
     }
+
     .grid{
       margin-top:1.2rem;
       display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
+      grid-template-columns:repeat(4,minmax(0,1fr));
       gap:1rem;
     }
     .pcard{
       background:#fff;
       border:1px solid var(--line);
       border-radius:var(--radius);
-      box-shadow:0 8px 22px rgba(15,23,42,.05);
+      box-shadow:0 10px 26px rgba(15,23,42,.05);
       overflow:hidden;
+      transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    }
+    .pcard:hover{
+      transform:translateY(-3px);
+      box-shadow:0 18px 45px rgba(15,23,42,.10);
+      border-color:rgba(214,0,28,.28);
     }
     .ph{
       height:150px;
       background:
         linear-gradient(135deg, rgba(214,0,28,.12), rgba(59,130,246,.10)),
         radial-gradient(circle at 30% 30%, rgba(255,255,255,.75), rgba(255,255,255,0));
+      display:flex;align-items:flex-end;justify-content:flex-start;
+      padding:.75rem;
+    }
+    .chip{
+      display:inline-flex;align-items:center;
+      padding:.22rem .55rem;border-radius:999px;
+      background:rgba(255,255,255,.78);
+      border:1px solid rgba(15,23,42,.08);
+      font-size:.78rem;font-weight:800;color:var(--text);
     }
     .pb{padding:.95rem .95rem 1rem}
-    .pn{font-family:Montserrat,sans-serif;font-weight:700;margin-bottom:.25rem}
-    .pd{color:var(--muted);font-size:.88rem;margin-bottom:.75rem}
+    .pn{font-family:Montserrat,sans-serif;font-weight:900;margin-bottom:.25rem}
+    .pd{color:var(--muted);font-size:.9rem;margin-bottom:.75rem}
     .plink{
-      display:inline-flex; align-items:center; gap:.35rem;
-      color:var(--primary2);
-      font-weight:600;
-      font-size:.88rem;
+      display:inline-flex;align-items:center;gap:.35rem;
+      color:var(--primary2);font-weight:900;font-size:.9rem;
     }
 
-    /* ===== Theme series grid (like 主题系列) ===== */
+    /* ===== Theme series (like sample site) ===== */
     .series{
       margin-top:1.1rem;
       display:grid;
@@ -356,38 +384,41 @@
       background:#fff;
       border:1px solid var(--line);
       border-radius:14px;
-      padding:.85rem .8rem;
+      padding:.95rem .8rem;
       text-align:center;
       color:var(--text);
-      font-weight:600;
-      font-size:.88rem;
+      font-weight:900;
+      font-size:.9rem;
+      box-shadow:0 10px 22px rgba(15,23,42,.04);
+      transition:transform .15s ease, border-color .15s ease;
     }
-    .s:hover{border-color:rgba(214,0,28,.35); box-shadow:0 10px 26px rgba(214,0,28,.08)}
+    .s:hover{transform:translateY(-2px);border-color:rgba(214,0,28,.28)}
 
-    /* ===== Two-column blocks ===== */
+    /* ===== Two-column cards ===== */
     .two{
       margin-top:1.35rem;
       display:grid;
       grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
-      gap:1.3rem;
+      gap:1.2rem;
       align-items:start;
     }
     .card{
       background:#fff;
       border:1px solid var(--line);
       border-radius:var(--radius);
-      box-shadow:0 10px 28px rgba(15,23,42,.06);
+      box-shadow:var(--shadow2);
       padding:1.05rem 1.05rem 1rem;
     }
     .card h3{
       font-family:Montserrat,sans-serif;
       font-size:1.02rem;
+      font-weight:900;
       margin-bottom:.35rem;
     }
-    .list{margin-top:.55rem; color:var(--muted); font-size:.92rem}
-    .list li{margin-left:1.05rem; margin-bottom:.25rem}
+    .list{margin-top:.55rem; color:var(--muted); font-size:.94rem}
+    .list li{margin-left:1.05rem; margin-bottom:.28rem}
 
-    /* ===== Service flow (4 steps) ===== */
+    /* ===== Flow ===== */
     .flow{
       margin-top:1.2rem;
       display:grid;
@@ -395,30 +426,27 @@
       gap:.9rem;
     }
     .step{
-      background:#fff;
-      border:1px solid var(--line);
+      background:#fff;border:1px solid var(--line);
       border-radius:var(--radius);
-      padding:.95rem .95rem 1rem;
+      padding:1rem .95rem 1rem;
+      box-shadow:0 10px 22px rgba(15,23,42,.04);
     }
     .step .k{
-      font-size:.76rem;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--muted);
-      margin-bottom:.2rem;
+      font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;
+      color:var(--muted);margin-bottom:.2rem;font-weight:800;
     }
-    .step .t{font-family:Montserrat,sans-serif;font-weight:700;margin-bottom:.35rem}
-    .step .d{color:var(--muted);font-size:.9rem}
+    .step .t{font-family:Montserrat,sans-serif;font-weight:900;margin-bottom:.35rem}
+    .step .d{color:var(--muted);font-size:.92rem}
 
-    /* ===== Footer sitemap (like their底部多列) ===== */
+    /* ===== Footer sitemap (like sample site) ===== */
     footer{
       background:#0b1220;
       color:#cbd5e1;
       padding:2.2rem 1.1rem 1.1rem;
-      border-top:1px solid rgba(255,255,255,.08);
+      border-top:1px solid rgba(255,255,255,.10);
     }
     .foot{
-      max-width:var(--max); margin:0 auto;
+      max-width:var(--max);margin:0 auto;
       display:grid;
       grid-template-columns:1.2fr 1fr 1fr 1fr;
       gap:1.2rem;
@@ -426,75 +454,83 @@
     .foot h4{
       font-family:Montserrat,sans-serif;
       font-size:.9rem;
-      letter-spacing:.08em;
+      letter-spacing:.10em;
       text-transform:uppercase;
       margin-bottom:.6rem;
       color:#fff;
+      font-weight:900;
     }
-    .foot a{display:block; color:#cbd5e1; opacity:.85; margin-bottom:.35rem; font-size:.9rem}
+    .foot a{
+      display:block;color:#cbd5e1;opacity:.85;
+      margin-bottom:.35rem;font-size:.92rem;
+    }
     .foot a:hover{opacity:1;text-decoration:underline}
     .copy{
-      max-width:var(--max); margin:0.9rem auto 0;
-      padding-top:.9rem;
-      border-top:1px solid rgba(255,255,255,.10);
-      font-size:.85rem;
+      max-width:var(--max);margin:.95rem auto 0;
+      padding-top:.95rem;
+      border-top:1px solid rgba(255,255,255,.12);
+      font-size:.86rem;
       color:#94a3b8;
-      display:flex; justify-content:space-between; gap:.8rem; flex-wrap:wrap;
+      display:flex;justify-content:space-between;gap:.8rem;flex-wrap:wrap;
     }
 
     /* ===== Responsive ===== */
-    @media (max-width: 980px){
-      .hero .inner{grid-template-columns:1fr}
-      .grid{grid-template-columns:repeat(2, minmax(0,1fr))}
-      .series{grid-template-columns:repeat(3, minmax(0,1fr))}
+    @media (max-width: 1040px){
+      .hero .wrap{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .series{grid-template-columns:repeat(3,minmax(0,1fr))}
       .two{grid-template-columns:1fr}
-      .flow{grid-template-columns:repeat(2, minmax(0,1fr))}
+      .flow{grid-template-columns:repeat(2,minmax(0,1fr))}
       .foot{grid-template-columns:1fr 1fr}
     }
-    @media (max-width: 640px){
+    @media (max-width: 740px){
+      .menu{display:none}
+      .burger{display:flex}
       .grid{grid-template-columns:1fr}
       .flow{grid-template-columns:1fr}
-      .menu{gap:.7rem}
     }
   </style>
 </head>
 
 <body>
-  <!-- Top utility bar (languages + quick links) -->
+  <!-- Top Utility Bar -->
   <div class="topbar">
     <div class="inner">
-      <div class="left">
+      <div class="top-left">
         <span class="pill">Language</span>
         <div class="lang">
-          <a href="#">EN</a>
-          <a href="#">中文</a>
-          <a href="#">日本語</a>
+          <a href="#" aria-label="English">EN</a>
+          <a href="#" aria-label="Chinese">中文</a>
+          <a href="#" aria-label="Japanese">日本語</a>
         </div>
       </div>
-      <div class="right quick">
+
+      <div class="top-right">
         <a href="#contact">Contact</a>
-        <span style="opacity:.5">|</span>
-        <a href="#new">New Showcase</a>
-        <span style="opacity:.5">|</span>
+        <span class="sep">|</span>
+        <a href="#showcase">New Showcase</a>
+        <span class="sep">|</span>
         <a href="#about">About</a>
       </div>
     </div>
   </div>
 
-  <!-- Main navigation (product center style) -->
+  <!-- Main Nav -->
   <header>
     <div class="nav">
       <a class="brand" href="#home">
         <div class="logo">SZ</div>
         <div>
-          <div class="name">SNBET® / EASYFULL</div>
-          <div class="sub">Golden Zipper Industrial Group</div>
+          <div class="bname">SNBET® / EASYFULL</div>
+          <div class="bsub">Golden Zipper Industrial Group</div>
         </div>
       </a>
 
-      <nav class="menu">
+      <div class="burger" id="burger" aria-label="Open menu">≡</div>
+
+      <nav class="menu" aria-label="Main navigation">
         <a class="item" href="#home">Home</a>
-        <a class="item" href="#new">Showcase</a>
+        <a class="item" href="#showcase">New</a>
 
         <div class="item has-dd">
           <span>Product Center ▾</span>
@@ -509,16 +545,16 @@
         </div>
 
         <div class="item has-dd">
-          <span>Series ▾</span>
+          <span>Theme Series ▾</span>
           <div class="dropdown">
-            <div class="dd-title">Theme series</div>
+            <div class="dd-title">Series</div>
             <div class="dd-grid">
-              <a class="dd-link" href="#series">Sports</a>
-              <a class="dd-link" href="#series">Workwear</a>
-              <a class="dd-link" href="#series">Menswear</a>
-              <a class="dd-link" href="#series">Womenswear</a>
-              <a class="dd-link" href="#series">Kidswear</a>
-              <a class="dd-link" href="#series">Eco</a>
+              <a class="dd-link" href="#series">Sport</a>
+              <a class="dd-link" href="#series">Work</a>
+              <a class="dd-link" href="#series">Man</a>
+              <a class="dd-link" href="#series">Woman</a>
+              <a class="dd-link" href="#series">Kid</a>
+              <a class="dd-link" href="#series">Sustainable</a>
             </div>
           </div>
         </div>
@@ -528,42 +564,71 @@
         <a class="cta" href="#contact">Contact</a>
       </nav>
     </div>
+
+    <!-- Mobile panel -->
+    <div class="mobile-panel" id="mobilePanel">
+      <div class="inner">
+        <a class="m-link" href="#home">Home</a>
+        <a class="m-link" href="#showcase">New Showcase</a>
+        <a class="m-link" href="#solutions">Product Center</a>
+        <a class="m-link" href="#series">Theme Series</a>
+        <a class="m-link" href="#quality">Quality</a>
+        <a class="m-link" href="#global">Global</a>
+        <a class="m-link" href="#contact">Contact</a>
+      </div>
+    </div>
   </header>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <section id="home" class="hero">
-    <div class="inner">
+    <div class="wrap">
       <div>
-        <div class="kicker">Integrated trims & packaging supplier</div>
-        <h1>Industrial-grade <span class="accent">zippers, packaging & hangers</span> for global apparel brands.</h1>
-        <p>
-          Golden Zipper Industrial Group integrates SNBET® zippers and EasyFull® packaging & hangers to help
-          apparel brands streamline sourcing with a one-stop, compliant, and scalable manufacturing partner.
-        </p>
-        <div class="badges">
-          <span class="badge"><span class="dot"></span> 20+ years experience</span>
-          <span class="badge">OEM &amp; ODM capable</span>
-          <span class="badge">Export programs: US / EU / Japan / Australia</span>
+        <!-- Two-message banner like the sample site -->
+        <div class="hero-split">
+          <div class="hero-block">
+            <div class="kicker">Dare to innovate · Deliver with consistency</div>
+            <h1>Integrated <span class="accent">zippers, packaging & hangers</span> for global apparel programs.</h1>
+            <p>
+              Golden Zipper Industrial Group combines SNBET® and EasyFull® to help brands streamline sourcing with a
+              one-stop, compliant, scalable manufacturing partner.
+            </p>
+          </div>
+
+          <div class="hero-block">
+            <div class="kicker">New beginning · New journey</div>
+            <p>
+              We support OEM/ODM execution across regions—from sampling to bulk production—built around quality,
+              testing, and stable capacity for long-term programs.
+            </p>
+          </div>
         </div>
+
+        <div class="badges">
+          <span class="badge"><span class="dot"></span> 20+ years manufacturing experience</span>
+          <span class="badge">OEM &amp; ODM capable</span>
+          <span class="badge">Export: US / EU / Japan / Australia</span>
+        </div>
+
         <div class="hero-actions">
           <a class="btn1" href="#contact">Talk to our team</a>
-          <a class="btn2" href="#solutions">View product center</a>
+          <a class="btn2" href="#showcase">Explore new showcase</a>
         </div>
       </div>
 
       <aside class="hero-card">
         <div class="title">Key Metrics</div>
         <div class="sub">Designed for high-volume programs with global brands.</div>
+
         <div class="metrics">
           <div class="m">
             <div class="l">Zippers / day</div>
             <div class="v">350,000 pcs</div>
-            <div class="n">Nylon, vislon & metal</div>
+            <div class="n">Nylon · Vislon · Metal</div>
           </div>
           <div class="m">
             <div class="l">Zippers / year</div>
             <div class="v">125M pcs</div>
-            <div class="n">Industrial + kidswear lines</div>
+            <div class="n">Multiple product lines</div>
           </div>
           <div class="m">
             <div class="l">Bags / day</div>
@@ -580,82 +645,131 @@
     </div>
   </section>
 
-  <!-- New Showcase (like 新品展示) -->
-  <section id="new" class="soft">
+  <!-- NEW SHOWCASE -->
+  <section id="showcase" class="soft">
     <div class="wrap">
-      <div class="label">Showcase</div>
-      <div class="title">New Showcase</div>
+      <div class="label">New showcase</div>
+      <div class="title">Featured innovations & new releases</div>
       <div class="intro">
-        Present your newest zipper finishes, packaging formats, and hanger designs here. (You can later replace these
-        placeholder cards with real product photos and SKUs.)  [oai_citation:1‡THC Zipper](https://thczipper.com/web/)
+        This section mirrors the “New Showcase / Selected” pattern on the demo site: you can later replace the
+        placeholders with real SKUs, finishes, and product photos.  [oai_citation:1‡THC Zipper](https://thczipper.com/web/index.asp?utm_source=chatgpt.com)
       </div>
 
-      <div class="tabs">
-        <div class="tab active">Featured</div>
-        <div class="tab">Zippers</div>
-        <div class="tab">Packaging</div>
-        <div class="tab">Hangers</div>
+      <div class="tabs" role="tablist" aria-label="Showcase tabs">
+        <button class="tab active" data-filter="all" role="tab">Selected</button>
+        <button class="tab" data-filter="zippers" role="tab">Zippers</button>
+        <button class="tab" data-filter="packaging" role="tab">Packaging</button>
+        <button class="tab" data-filter="hangers" role="tab">Hangers</button>
       </div>
 
-      <div class="grid">
-        <div class="pcard">
-          <div class="ph"></div>
+      <div class="grid" id="cards">
+        <!-- ZIPPERS -->
+        <div class="pcard" data-cat="zippers">
+          <div class="ph"><span class="chip">Zippers</span></div>
           <div class="pb">
-            <div class="pn">Premium Finish Zipper</div>
-            <div class="pd">Engineered for fashion & performance apparel programs.</div>
+            <div class="pn">Water-repellent zipper finish</div>
+            <div class="pd">For outdoor & performance apparel programs.</div>
             <a class="plink" href="#solutions">Explore more →</a>
           </div>
         </div>
 
-        <div class="pcard">
-          <div class="ph"></div>
+        <div class="pcard" data-cat="zippers">
+          <div class="ph"><span class="chip">Zippers</span></div>
           <div class="pb">
-            <div class="pn">Recycled PE Bag</div>
-            <div class="pd">Virgin to 100% recycled options with custom printing.</div>
+            <div class="pn">Metallic film resin zipper</div>
+            <div class="pd">Shiny look, engineered for durability.</div>
             <a class="plink" href="#solutions">Explore more →</a>
           </div>
         </div>
 
-        <div class="pcard">
-          <div class="ph"></div>
+        <!-- PACKAGING -->
+        <div class="pcard" data-cat="packaging">
+          <div class="ph"><span class="chip">Packaging</span></div>
           <div class="pb">
-            <div class="pn">Retail-ready Hanger</div>
-            <div class="pd">Custom logo, hooks, clips and finishing for programs.</div>
+            <div class="pn">100% recycled PE bag</div>
+            <div class="pd">Custom printing, thickness & sizes.</div>
             <a class="plink" href="#solutions">Explore more →</a>
+          </div>
+        </div>
+
+        <div class="pcard" data-cat="packaging">
+          <div class="ph"><span class="chip">Packaging</span></div>
+          <div class="pb">
+            <div class="pn">Biodegradable mailer</div>
+            <div class="pd">PLA/PBAT/starch-based options.</div>
+            <a class="plink" href="#solutions">Explore more →</a>
+          </div>
+        </div>
+
+        <!-- HANGERS -->
+        <div class="pcard" data-cat="hangers">
+          <div class="ph"><span class="chip">Hangers</span></div>
+          <div class="pb">
+            <div class="pn">Retail-ready hanger</div>
+            <div class="pd">Custom logo, hooks, clips & finishing.</div>
+            <a class="plink" href="#solutions">Explore more →</a>
+          </div>
+        </div>
+
+        <div class="pcard" data-cat="hangers">
+          <div class="ph"><span class="chip">Hangers</span></div>
+          <div class="pb">
+            <div class="pn">Anti-slip coat hanger</div>
+            <div class="pd">Optimized for store operations.</div>
+            <a class="plink" href="#solutions">Explore more →</a>
+          </div>
+        </div>
+
+        <!-- SELECTED (mix) -->
+        <div class="pcard" data-cat="zippers">
+          <div class="ph"><span class="chip">Selected</span></div>
+          <div class="pb">
+            <div class="pn">Kidswear-safe zipper program</div>
+            <div class="pd">Designed for sensitive product standards.</div>
+            <a class="plink" href="#quality">Quality & safety →</a>
+          </div>
+        </div>
+
+        <div class="pcard" data-cat="packaging">
+          <div class="ph"><span class="chip">Selected</span></div>
+          <div class="pb">
+            <div class="pn">Printed PE bag system</div>
+            <div class="pd">Film → print → bag-making in one site.</div>
+            <a class="plink" href="#solutions">Packaging center →</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Theme series (like 主题系列) -->
+  <!-- THEME SERIES -->
   <section id="series">
     <div class="wrap">
       <div class="label">Theme series</div>
-      <div class="title">Series for different apparel scenarios</div>
+      <div class="title">Select by apparel scenario</div>
       <div class="intro">
-        Inspired by the “theme series” approach: organize solutions by usage to make selection easier for customers.  [oai_citation:2‡THC Zipper](https://thczipper.com/web/)
+        Like the demo site’s theme blocks, we group solutions by usage so customers can choose faster.  [oai_citation:2‡THC Zipper](https://thczipper.com/web/index.asp?utm_source=chatgpt.com)
       </div>
 
-      <div class="series">
-        <div class="s">Sports Series</div>
-        <div class="s">Workwear Series</div>
-        <div class="s">Menswear Series</div>
-        <div class="s">Womenswear Series</div>
-        <div class="s">Kidswear Series</div>
-        <div class="s">Eco Series</div>
+      <div class="series" role="list">
+        <a class="s" href="#solutions" role="listitem">Sport</a>
+        <a class="s" href="#solutions" role="listitem">Work</a>
+        <a class="s" href="#solutions" role="listitem">Man</a>
+        <a class="s" href="#solutions" role="listitem">Woman</a>
+        <a class="s" href="#solutions" role="listitem">Kid</a>
+        <a class="s" href="#solutions" role="listitem">Sustainable</a>
       </div>
     </div>
   </section>
 
-  <!-- About (like 关于xxx + 图文) -->
+  <!-- ABOUT -->
   <section id="about" class="soft">
     <div class="wrap">
       <div class="label">About</div>
       <div class="title">About Golden Zipper Industrial Group</div>
       <div class="intro">
-        We integrate SNBET® and EasyFull® to serve global apparel brands with zippers, garment packaging, and hangers—
-        designed for stable quality, compliance, and long-term supply.
+        We integrate SNBET® and EasyFull® to support global brands with zippers, garment packaging and hangers—focused on
+        quality, testing, compliance and stable supply.
       </div>
 
       <div class="two">
@@ -667,12 +781,13 @@
             <li><b>Garment Hangers</b>: PP/PS/ABS, custom logo, hooks, clips, finishes.</li>
           </ul>
         </div>
+
         <div class="card">
-          <h3>Why clients work with us</h3>
+          <h3>What clients value</h3>
           <ul class="list">
-            <li>High-volume manufacturing capacity</li>
-            <li>In-house testing & quality assurance</li>
-            <li>Support for compliance requirements</li>
+            <li>High-volume manufacturing capacity & lead-time control</li>
+            <li>In-house testing & standardized quality checks</li>
+            <li>Support for chemical / social compliance requirements</li>
             <li>Program execution across regions</li>
           </ul>
         </div>
@@ -680,22 +795,22 @@
     </div>
   </section>
 
-  <!-- Product center (solutions) -->
+  <!-- SOLUTIONS / PRODUCT CENTER -->
   <section id="solutions">
     <div class="wrap">
       <div class="label">Product center</div>
       <div class="title">Solutions</div>
       <div class="intro">
-        A consolidated portfolio across trims and packaging—built for global apparel programs.
+        A consolidated portfolio across trims and packaging—built for long-term global apparel programs.
       </div>
 
       <div class="two">
         <div class="card">
           <h3>SNBET® Zippers</h3>
           <ul class="list">
-            <li>Industrial and kidswear applications</li>
-            <li>Daily capacity: 350,000 pcs; yearly: 125M pcs</li>
-            <li>Testing: tensile, torsion, color fastness, washing, salt spray, flammability, XRF</li>
+            <li>Industrial & kidswear applications</li>
+            <li>Capacity: 350,000 pcs/day; 125M pcs/year</li>
+            <li>Types: nylon · vislon · metal · coil · waterproof · double sliders</li>
           </ul>
         </div>
 
@@ -704,7 +819,6 @@
           <ul class="list">
             <li>PE bags: virgin / 50% recycled / 100% recycled</li>
             <li>Biodegradable: PLA / PBAT / starch-based</li>
-            <li>Bubble wrap formats for e-commerce protection</li>
             <li>Hangers: PP/PS/ABS with custom logo & features</li>
           </ul>
         </div>
@@ -712,13 +826,13 @@
     </div>
   </section>
 
-  <!-- Quality -->
+  <!-- QUALITY -->
   <section id="quality" class="soft">
     <div class="wrap">
       <div class="label">Quality</div>
-      <div class="title">Quality & Safety</div>
+      <div class="title">Quality & safety</div>
       <div class="intro">
-        Designed to meet global brand expectations with standardized testing and compliance programs.
+        Standardized testing and compliance programs designed for brand requirements.
       </div>
 
       <div class="two">
@@ -733,22 +847,22 @@
         </div>
 
         <div class="card">
-          <h3>Certifications & standards</h3>
+          <h3>Compliance programs</h3>
           <ul class="list">
-            <li>OEKO-TEX Standard 100 (Appendix 6 Class I)</li>
-            <li>BSCI · CPSIA · Proposition 65 · REACH</li>
-            <li>ZDHC / Detox (in progress) · Disney FAMA</li>
+            <li>OEKO-TEX® Standard 100 (Appendix 6 Class I)</li>
+            <li>REACH · Proposition 65 · CPSIA</li>
+            <li>BSCI · Disney FAMA · customer-specific programs</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Global -->
+  <!-- GLOBAL -->
   <section id="global">
     <div class="wrap">
       <div class="label">Global presence</div>
-      <div class="title">Global offices & service points</div>
+      <div class="title">Offices & service points</div>
       <div class="intro">
         Multi-region support close to sourcing hubs for faster communication and program execution.
       </div>
@@ -764,23 +878,24 @@
             <li>Qingdao service point · Zaozhuang service point</li>
           </ul>
         </div>
+
         <div class="card">
-          <h3>Map</h3>
-          <p style="color:var(--muted);font-size:.92rem">
-            Replace this block with a world map image later (e.g. <code>assets/world-map.jpg</code>).
+          <h3>Map placeholder</h3>
+          <p style="color:var(--muted);font-size:.95rem">
+            Replace this card with your world map image later (e.g. <code>/assets/world-map.jpg</code>).
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Service flow -->
+  <!-- FLOW -->
   <section id="flow" class="soft">
     <div class="wrap">
       <div class="label">Service flow</div>
       <div class="title">From inquiry to delivery</div>
       <div class="intro">
-        A clear process from technical consultation to sampling, mass production, and on-time shipment.
+        A clear process from consultation to sampling, mass production, and shipment.
       </div>
 
       <div class="flow">
@@ -792,29 +907,29 @@
         <div class="step">
           <div class="k">Step 02</div>
           <div class="t">Sampling & quotation</div>
-          <div class="d">Design proposal, custom sample, and detailed quotation for approval.</div>
+          <div class="d">Design proposal, custom sample, and quotation for approval.</div>
         </div>
         <div class="step">
           <div class="k">Step 03</div>
           <div class="t">Mass production & QC</div>
-          <div class="d">In-house production with ongoing testing and quality assurance.</div>
+          <div class="d">In-house processes with ongoing testing and quality assurance.</div>
         </div>
         <div class="step">
           <div class="k">Step 04</div>
           <div class="t">Packing & delivery</div>
-          <div class="d">Export packing, documentation, and shipment coordination worldwide.</div>
+          <div class="d">Export packing, documentation, and shipping coordination worldwide.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact (like 联系我们区块 + 地址/邮箱/电话) -->
+  <!-- CONTACT -->
   <section id="contact">
     <div class="wrap">
       <div class="label">Contact</div>
       <div class="title">Contact us</div>
       <div class="intro">
-        Tell us what you need—zippers, packaging, hangers—and we’ll respond with recommendations, samples and timelines.  [oai_citation:3‡THC Zipper](https://thczipper.com/web/)
+        Tell us what you need—zippers, packaging or hangers—and we’ll respond with recommendations, samples and timelines.
       </div>
 
       <div class="two">
@@ -837,7 +952,7 @@
             <li><b>Email:</b> <a href="mailto:chalihua@sanbaihuili.net">chalihua@sanbaihuili.net</a></li>
             <li><b>Alt:</b> <a href="mailto:yehongjuan@sanbaihuili.net">yehongjuan@sanbaihuili.net</a></li>
           </ul>
-          <div style="margin-top:.85rem">
+          <div style="margin-top:.9rem">
             <a class="btn1" href="mailto:pangwei@goldenzipper.com.cn">Email us</a>
           </div>
         </div>
@@ -845,7 +960,7 @@
     </div>
   </section>
 
-  <!-- Footer sitemap -->
+  <!-- FOOTER (Sitemap columns like demo) -->
   <footer>
     <div class="foot">
       <div>
@@ -856,18 +971,20 @@
         <a href="#global">Global Presence</a>
       </div>
       <div>
-        <h4>Series</h4>
-        <a href="#series">Sports Series</a>
-        <a href="#series">Workwear Series</a>
-        <a href="#series">Kidswear Series</a>
-        <a href="#series">Eco Series</a>
+        <h4>Theme series</h4>
+        <a href="#series">Sport</a>
+        <a href="#series">Work</a>
+        <a href="#series">Man</a>
+        <a href="#series">Woman</a>
+        <a href="#series">Kid</a>
+        <a href="#series">Sustainable</a>
       </div>
       <div>
-        <h4>Showcase</h4>
-        <a href="#new">Featured</a>
-        <a href="#new">Zippers</a>
-        <a href="#new">Packaging</a>
-        <a href="#new">Hangers</a>
+        <h4>New showcase</h4>
+        <a href="#showcase">Selected</a>
+        <a href="#showcase">Zippers</a>
+        <a href="#showcase">Packaging</a>
+        <a href="#showcase">Hangers</a>
       </div>
       <div>
         <h4>Contact</h4>
@@ -884,7 +1001,38 @@
   </footer>
 
   <script>
+    // Footer year
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const burger = document.getElementById("burger");
+    const panel = document.getElementById("mobilePanel");
+    burger?.addEventListener("click", () => panel.classList.toggle("show"));
+
+    // Tabs filter
+    const tabs = Array.from(document.querySelectorAll(".tab"));
+    const cards = Array.from(document.querySelectorAll(".pcard"));
+
+    function setActiveTab(btn){
+      tabs.forEach(t => t.classList.remove("active"));
+      btn.classList.add("active");
+    }
+
+    function filterCards(cat){
+      cards.forEach(card => {
+        const c = card.getAttribute("data-cat");
+        const show = (cat === "all") || (c === cat);
+        card.style.display = show ? "" : "none";
+      });
+    }
+
+    tabs.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const cat = btn.getAttribute("data-filter");
+        setActiveTab(btn);
+        filterCards(cat);
+      });
+    });
   </script>
 </body>
 </html>
