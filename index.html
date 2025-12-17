@@ -2,671 +2,889 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Golden Zipper Industrial Group | SNBET & EasyFull</title>
+  <title>SNBET® | EasyFull® — Golden Zipper Industrial Group</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-        content="Golden Zipper Industrial Group integrates SNBET zippers and EasyFull packaging & hangers to provide end-to-end trims and packaging solutions for global apparel brands." />
+        content="Golden Zipper Industrial Group integrates SNBET® zippers and EasyFull® packaging & hangers to provide one-stop trims and packaging solutions for global apparel brands." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
     rel="stylesheet"
   />
   <style>
-    :root {
-      --primary: #d6001c;
-      --primary-soft: #fce7ea;
-      --primary-dark: #9f0417;
-      --text-main: #111827;
-      --text-muted: #6b7280;
-      --bg-page: #f3f4f6;
-      --bg-white: #ffffff;
-      --border-subtle: #e5e7eb;
-      --nav-bg: #ffffff;
-      --nav-border: #e5e7eb;
-      --max-width: 1080px;
-      --radius-lg: 14px;
-      --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.08);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text-main);
-      background: var(--bg-page);
-      line-height: 1.6;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Header */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: var(--nav-bg);
-      border-bottom: 1px solid var(--nav-border);
-    }
-
-    .nav {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0.75rem 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .brand-logo {
-      width: 34px;
-      height: 34px;
-      border-radius: 6px;
-      background: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
-      font-weight: 700;
-      font-size: 0.9rem;
-      font-family: "Montserrat", system-ui, sans-serif;
-    }
-
-    .brand-text-main {
-      font-family: "Montserrat", system-ui, sans-serif;
-      font-weight: 700;
-      font-size: 0.95rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #111827;
-    }
-
-    .brand-text-sub {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .nav-links a {
-      padding-bottom: 2px;
-      border-bottom: 2px solid transparent;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary-dark);
-      border-bottom-color: var(--primary-soft);
-    }
-
-    .nav-cta {
-      padding: 0.4rem 0.9rem;
-      border-radius: 999px;
-      border: 1px solid var(--primary);
-      color: #ffffff;
-      background: var(--primary);
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin-left: 0.5rem;
-    }
-
-    /* Sections */
-
-    main { flex: 1; }
-
-    section {
-      padding: 3.5rem 1.25rem;
-    }
-
-    .section-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
-
-    .section-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.24em;
-      color: var(--text-muted);
-      margin-bottom: 0.4rem;
-    }
-
-    .section-title {
-      font-family: "Montserrat", system-ui, sans-serif;
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: #111827;
-    }
-
-    .section-intro {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      max-width: 40rem;
-    }
-
-    /* Hero */
-
-    .hero {
-      background: radial-gradient(circle at top left, #ffffff, #f3f4f6);
-      border-bottom: 1px solid var(--border-subtle);
-      padding-top: 3rem;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .hero-eyebrow {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--text-muted);
-      margin-bottom: 0.6rem;
-    }
-
-    .hero-title {
-      font-family: "Montserrat", system-ui, sans-serif;
-      font-size: clamp(2.1rem, 3.3vw, 2.7rem);
-      line-height: 1.15;
-      font-weight: 700;
-      margin-bottom: 0.9rem;
-    }
-
-    .hero-title span {
-      color: var(--primary-dark);
-    }
-
-    .hero-subtitle {
-      font-size: 0.98rem;
-      color: var(--text-muted);
-      max-width: 32rem;
-      margin-bottom: 1.4rem;
-    }
-
-    .hero-highlights {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 1.6rem;
-    }
-
-    .hero-pill {
-      border-radius: 999px;
-      padding: 0.3rem 0.8rem;
-      font-size: 0.8rem;
-      border: 1px solid var(--border-subtle);
-      background: #ffffff;
-      color: var(--text-muted);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      align-items: center;
-    }
-
-    .btn-primary {
-      border-radius: 999px;
-      padding: 0.7rem 1.4rem;
-      font-size: 0.9rem;
-      font-weight: 600;
-      border: none;
-      background: var(--primary);
-      color: #ffffff;
-      cursor: pointer;
-    }
-
-    .btn-secondary {
-      border-radius: 999px;
-      padding: 0.65rem 1.3rem;
-      font-size: 0.88rem;
-      font-weight: 500;
-      border: 1px solid var(--border-subtle);
-      background: #ffffff;
-      color: var(--text-main);
-      cursor: pointer;
-    }
-
-    .hero-card {
-      background: #ffffff;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-subtle);
-      padding: 1.1rem 1.2rem;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .hero-card-title {
-      font-size: 0.9rem;
-      font-weight: 600;
-      font-family: "Montserrat", system-ui, sans-serif;
-      margin-bottom: 0.4rem;
-      color: #111827;
-    }
-
-    .hero-card-sub {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 0.8rem;
-    }
-
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.9rem;
-    }
-
-    .metric {
-      padding: 0.5rem 0.4rem;
-    }
-
-    .metric-label {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-bottom: 0.1rem;
-    }
-
-    .metric-value {
-      font-size: 1rem;
-      font-weight: 700;
-      font-family: "Montserrat", system-ui, sans-serif;
-      color: #111827;
-    }
-
-    .metric-note {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    /* Business lines */
-
-    .business {
-      background: #f9fafb;
-      border-top: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .cards-grid {
-      margin-top: 1.8rem;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.1rem;
-    }
-
-    .card {
-      background: #ffffff;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-subtle);
-      padding: 1.1rem 1rem;
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.03);
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-
-    .card-tag {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-muted);
-      margin-bottom: 0.4rem;
-    }
-
-    .card-title {
-      font-size: 1rem;
-      font-family: "Montserrat", system-ui, sans-serif;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-      color: #111827;
-    }
-
-    .card-text {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 0.7rem;
-    }
-
-    .card-list {
-      list-style: none;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .card-list li {
-      padding-left: 0.9rem;
-      position: relative;
-      margin-bottom: 0.25rem;
-    }
-
-    .card-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0.2rem;
-      top: 0.05rem;
-      color: var(--primary);
-      font-size: 0.9rem;
-    }
-
-    /* Two-column section */
-
-    .two-column {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 1.6rem;
-      margin-top: 1.8rem;
-    }
-
-    .text-muted {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.7rem;
-    }
-
-    .pill {
-      font-size: 0.78rem;
-      border-radius: 999px;
-      border: 1px solid var(--border-subtle);
-      padding: 0.18rem 0.6rem;
-      background: #ffffff;
-      color: var(--text-muted);
-    }
-
-    .table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 0.9rem;
-      font-size: 0.84rem;
-    }
-
-    .table th,
-    .table td {
-      border: 1px solid var(--border-subtle);
-      padding: 0.45rem 0.55rem;
-      text-align: left;
-    }
-
-    .table th {
-      background: #f9fafb;
-      font-weight: 600;
-      font-size: 0.8rem;
-    }
-
-    .table tr:nth-child(even) td {
-      background: #f9fafb;
-    }
-
-    /* Global presence */
-
-    .tag {
-      display: inline-block;
-      padding: 0.18rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid var(--border-subtle);
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin: 0 0.3rem 0.3rem 0;
-      background: #ffffff;
-    }
-
-    .office-list {
-      list-style: none;
-      font-size: 0.9rem;
-      margin-top: 0.6rem;
-      color: var(--text-muted);
-    }
-
-    .office-list li {
-      margin-bottom: 0.25rem;
-    }
-
-    .map-box {
-      background: #ffffff;
-      border-radius: var(--radius-lg);
-      border: 1px dashed var(--border-subtle);
-      padding: 0.9rem;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    /* Service flow */
-
-    .flow-grid {
-      margin-top: 1.7rem;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .flow-card {
-      background: #ffffff;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-subtle);
-      padding: 0.9rem 0.9rem;
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.03);
-      font-size: 0.86rem;
-      color: var(--text-muted);
-    }
-
-    .flow-step {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--text-muted);
-      margin-bottom: 0.25rem;
-    }
-
-    .flow-title {
-      font-size: 0.95rem;
-      font-family: "Montserrat", system-ui, sans-serif;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-      color: #111827;
-    }
-
-    /* Contact */
-
-    .contact-grid {
-      margin-top: 1.8rem;
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 1.5rem;
-    }
-
-    .contact-card {
-      background: #ffffff;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-subtle);
-      padding: 1.1rem 1.1rem;
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.03);
-      font-size: 0.88rem;
-      color: var(--text-muted);
-    }
-
-    .contact-heading {
-      font-size: 1rem;
-      font-family: "Montserrat", system-ui, sans-serif;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-      color: #111827;
-    }
-
-    .contact-line {
-      margin-bottom: 0.28rem;
-    }
-
-    .contact-label {
-      width: 70px;
-      display: inline-block;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .contact-form {
-      display: grid;
-      gap: 0.6rem;
-      font-size: 0.85rem;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-    }
-
-    .field label {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .field input,
-    .field textarea {
-      border-radius: 8px;
-      border: 1px solid var(--border-subtle);
-      padding: 0.5rem 0.55rem;
-      font-family: inherit;
-      font-size: 0.85rem;
-      resize: vertical;
-      min-height: 36px;
-      background: #ffffff;
-    }
-
-    .field input:focus,
-    .field textarea:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 1px rgba(214, 0, 28, 0.18);
-    }
-
-    .btn-submit {
-      margin-top: 0.2rem;
-      border-radius: 999px;
-      padding: 0.55rem 1.1rem;
-      font-size: 0.86rem;
-      font-weight: 600;
-      border: none;
-      background: var(--primary);
-      color: #ffffff;
-      cursor: pointer;
-      width: fit-content;
-    }
-
-    /* Footer */
-
-    footer {
-      border-top: 1px solid var(--border-subtle);
-      background: #ffffff;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .footer-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 1rem 1.25rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 0.8rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 0.9rem;
-      flex-wrap: wrap;
-    }
-
-    /* Responsive */
-
-    @media (max-width: 900px) {
-      .hero-grid,
-      .two-column,
-      .flow-grid,
-      .contact-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .cards-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .flow-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        font-size: 0.8rem;
-      }
-
-      .cards-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .flow-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      section {
-        padding-inline: 1rem;
-      }
+    :root{
+      --bg:#ffffff;
+      --bg-soft:#f6f7fb;
+      --text:#0f172a;
+      --muted:#64748b;
+      --line:#e5e7eb;
+      --nav:#0b1220;
+      --nav2:#111a2e;
+      --primary:#d6001c;
+      --primary2:#9f0417;
+      --card:#ffffff;
+      --shadow:0 18px 45px rgba(15, 23, 42, 0.10);
+      --radius:14px;
+      --max:1120px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      color:var(--text); background:var(--bg); line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* ===== Top utility bar (language + quick links) ===== */
+    .topbar{
+      background:var(--nav);
+      color:#e5e7eb;
+      font-size:.85rem;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .topbar .inner{
+      max-width:var(--max); margin:0 auto;
+      padding:.55rem 1.1rem;
+      display:flex; align-items:center; justify-content:space-between; gap:1rem;
+      flex-wrap:wrap;
+    }
+    .topbar .left, .topbar .right{display:flex; align-items:center; gap:.8rem; flex-wrap:wrap}
+    .pill{
+      display:inline-flex; align-items:center; gap:.4rem;
+      padding:.22rem .6rem;
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:999px;
+      color:#e5e7eb;
+      background:rgba(255,255,255,.06);
+      font-size:.78rem;
+    }
+    .lang a{
+      color:#e5e7eb; opacity:.85; margin-right:.55rem;
+    }
+    .lang a:hover{opacity:1;text-decoration:underline}
+    .quick a{opacity:.85}
+    .quick a:hover{opacity:1;text-decoration:underline}
+
+    /* ===== Main nav (product center style) ===== */
+    header{
+      position:sticky; top:0; z-index:20;
+      background:linear-gradient(180deg,var(--nav2),#0b1220);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .nav{
+      max-width:var(--max); margin:0 auto;
+      padding:.9rem 1.1rem;
+      display:flex; align-items:center; justify-content:space-between; gap:1rem;
+    }
+    .brand{
+      display:flex; align-items:center; gap:.75rem;
+    }
+    .logo{
+      width:40px;height:40px;border-radius:10px;
+      background:linear-gradient(135deg,var(--primary),var(--primary2));
+      display:flex;align-items:center;justify-content:center;
+      color:#fff;font-weight:800;font-family:Montserrat,sans-serif;
+      box-shadow:0 14px 30px rgba(214,0,28,.25);
+    }
+    .brand .name{
+      color:#fff;
+      font-family:Montserrat,sans-serif;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:.92rem;
+      line-height:1.1;
+    }
+    .brand .sub{
+      color:#cbd5e1;
+      font-size:.78rem;
+      margin-top:.15rem;
+    }
+
+    .menu{display:flex; align-items:center; gap:1.1rem; flex-wrap:wrap; justify-content:flex-end}
+    .menu > .item{
+      position:relative;
+      color:#e5e7eb;
+      font-size:.9rem;
+      opacity:.9;
+      padding:.35rem .1rem;
+    }
+    .menu > .item:hover{opacity:1}
+    .menu > .item::after{
+      content:"";
+      position:absolute; left:0; bottom:-8px;
+      height:2px; width:0;
+      background:linear-gradient(to right,#fb7185,#fbbf24);
+      transition:width .2s ease;
+    }
+    .menu > .item:hover::after{width:100%}
+
+    /* Dropdown */
+    .dropdown{
+      position:absolute;
+      top:42px; left:0;
+      min-width:280px;
+      background:#ffffff;
+      border:1px solid var(--line);
+      border-radius:14px;
+      box-shadow:var(--shadow);
+      padding:.75rem;
+      display:none;
+    }
+    .has-dd:hover .dropdown{display:block}
+    .dd-title{
+      font-family:Montserrat,sans-serif;
+      font-weight:700;
+      font-size:.85rem;
+      color:var(--text);
+      margin:.2rem 0 .45rem;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+    .dd-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:.35rem;
+    }
+    .dd-link{
+      padding:.5rem .55rem;
+      border-radius:10px;
+      border:1px solid transparent;
+      color:var(--text);
+      font-size:.9rem;
+    }
+    .dd-link:hover{
+      border-color:var(--line);
+      background:var(--bg-soft);
+    }
+    .cta{
+      padding:.45rem .9rem;
+      border-radius:999px;
+      background:var(--primary);
+      color:#fff;
+      font-weight:600;
+      font-size:.85rem;
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .cta:hover{background:var(--primary2)}
+
+    /* ===== Hero ===== */
+    .hero{
+      background:
+        radial-gradient(circle at 15% 0%, rgba(214,0,28,.12), transparent 50%),
+        radial-gradient(circle at 85% 0%, rgba(59,130,246,.10), transparent 55%),
+        linear-gradient(180deg,#0b1220 0%, #0b1220 60%, #ffffff 60%, #ffffff 100%);
+      padding:3.2rem 1.1rem 0;
+    }
+    .hero .inner{
+      max-width:var(--max); margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(0,3fr) minmax(0,2fr);
+      gap:2rem;
+      align-items:start;
+      padding-bottom:2.2rem;
+    }
+    .kicker{
+      color:#cbd5e1;
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      font-size:.78rem;
+      font-weight:600;
+      margin-bottom:.65rem;
+    }
+    h1{
+      font-family:Montserrat,sans-serif;
+      font-size:clamp(2.0rem, 3.4vw, 2.7rem);
+      line-height:1.12;
+      color:#fff;
+      margin-bottom:.9rem;
+    }
+    .accent{
+      background:linear-gradient(to right,#fb7185,#fbbf24);
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+    .hero p{
+      color:#e2e8f0;
+      opacity:.92;
+      max-width:42rem;
+      margin-bottom:1.25rem;
+      font-size:.98rem;
+    }
+    .badges{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.4rem}
+    .badge{
+      display:inline-flex;align-items:center;gap:.45rem;
+      padding:.26rem .7rem;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.06);
+      color:#e5e7eb;
+      font-size:.8rem;
+    }
+    .dot{width:7px;height:7px;border-radius:999px;background:#22c55e}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:.75rem}
+    .btn1{
+      padding:.7rem 1.25rem;
+      border-radius:999px;
+      background:var(--primary);
+      color:#fff;
+      font-weight:600;
+      border:none;
+      cursor:pointer;
+    }
+    .btn1:hover{background:var(--primary2)}
+    .btn2{
+      padding:.68rem 1.2rem;
+      border-radius:999px;
+      background:transparent;
+      color:#fff;
+      font-weight:600;
+      border:1px solid rgba(255,255,255,.25);
+      cursor:pointer;
+    }
+    .btn2:hover{background:rgba(255,255,255,.08)}
+
+    .hero-card{
+      background:#ffffff;
+      border-radius:18px;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      padding:1.1rem 1.1rem 1rem;
+    }
+    .hero-card .title{
+      font-family:Montserrat,sans-serif;
+      font-weight:700;
+      font-size:.95rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:.15rem;
+    }
+    .hero-card .sub{color:var(--muted);font-size:.86rem;margin-bottom:.85rem}
+    .metrics{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:.8rem;
+    }
+    .m{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:.65rem .7rem;
+      background:var(--bg-soft);
+    }
+    .m .l{color:var(--muted);font-size:.78rem}
+    .m .v{font-family:Montserrat,sans-serif;font-weight:800;font-size:1.05rem}
+    .m .n{color:var(--muted);font-size:.78rem}
+
+    /* ===== Common section styles ===== */
+    section{padding:3.5rem 1.1rem}
+    .wrap{max-width:var(--max); margin:0 auto}
+    .label{
+      font-size:.78rem;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:.35rem;
+      font-weight:600;
+    }
+    .title{
+      font-family:Montserrat,sans-serif;
+      font-size:1.55rem;
+      font-weight:700;
+      margin-bottom:.55rem;
+    }
+    .intro{color:var(--muted); max-width:46rem}
+
+    /* ===== “New Arrivals” product grid (like their 新品展示) ===== */
+    .soft{background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+    .tabs{
+      display:flex; flex-wrap:wrap; gap:.55rem;
+      margin-top:1.1rem;
+    }
+    .tab{
+      padding:.35rem .8rem;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--muted);
+      font-size:.85rem;
+      cursor:pointer;
+    }
+    .tab.active{
+      border-color:rgba(214,0,28,.35);
+      background:rgba(214,0,28,.06);
+      color:var(--text);
+      font-weight:600;
+    }
+    .grid{
+      margin-top:1.2rem;
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:1rem;
+    }
+    .pcard{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:0 8px 22px rgba(15,23,42,.05);
+      overflow:hidden;
+    }
+    .ph{
+      height:150px;
+      background:
+        linear-gradient(135deg, rgba(214,0,28,.12), rgba(59,130,246,.10)),
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.75), rgba(255,255,255,0));
+    }
+    .pb{padding:.95rem .95rem 1rem}
+    .pn{font-family:Montserrat,sans-serif;font-weight:700;margin-bottom:.25rem}
+    .pd{color:var(--muted);font-size:.88rem;margin-bottom:.75rem}
+    .plink{
+      display:inline-flex; align-items:center; gap:.35rem;
+      color:var(--primary2);
+      font-weight:600;
+      font-size:.88rem;
+    }
+
+    /* ===== Theme series grid (like 主题系列) ===== */
+    .series{
+      margin-top:1.1rem;
+      display:grid;
+      grid-template-columns:repeat(6,minmax(0,1fr));
+      gap:.75rem;
+    }
+    .s{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:.85rem .8rem;
+      text-align:center;
+      color:var(--text);
+      font-weight:600;
+      font-size:.88rem;
+    }
+    .s:hover{border-color:rgba(214,0,28,.35); box-shadow:0 10px 26px rgba(214,0,28,.08)}
+
+    /* ===== Two-column blocks ===== */
+    .two{
+      margin-top:1.35rem;
+      display:grid;
+      grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
+      gap:1.3rem;
+      align-items:start;
+    }
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:0 10px 28px rgba(15,23,42,.06);
+      padding:1.05rem 1.05rem 1rem;
+    }
+    .card h3{
+      font-family:Montserrat,sans-serif;
+      font-size:1.02rem;
+      margin-bottom:.35rem;
+    }
+    .list{margin-top:.55rem; color:var(--muted); font-size:.92rem}
+    .list li{margin-left:1.05rem; margin-bottom:.25rem}
+
+    /* ===== Service flow (4 steps) ===== */
+    .flow{
+      margin-top:1.2rem;
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:.9rem;
+    }
+    .step{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:.95rem .95rem 1rem;
+    }
+    .step .k{
+      font-size:.76rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:.2rem;
+    }
+    .step .t{font-family:Montserrat,sans-serif;font-weight:700;margin-bottom:.35rem}
+    .step .d{color:var(--muted);font-size:.9rem}
+
+    /* ===== Footer sitemap (like their底部多列) ===== */
+    footer{
+      background:#0b1220;
+      color:#cbd5e1;
+      padding:2.2rem 1.1rem 1.1rem;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .foot{
+      max-width:var(--max); margin:0 auto;
+      display:grid;
+      grid-template-columns:1.2fr 1fr 1fr 1fr;
+      gap:1.2rem;
+    }
+    .foot h4{
+      font-family:Montserrat,sans-serif;
+      font-size:.9rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:.6rem;
+      color:#fff;
+    }
+    .foot a{display:block; color:#cbd5e1; opacity:.85; margin-bottom:.35rem; font-size:.9rem}
+    .foot a:hover{opacity:1;text-decoration:underline}
+    .copy{
+      max-width:var(--max); margin:0.9rem auto 0;
+      padding-top:.9rem;
+      border-top:1px solid rgba(255,255,255,.10);
+      font-size:.85rem;
+      color:#94a3b8;
+      display:flex; justify-content:space-between; gap:.8rem; flex-wrap:wrap;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 980px){
+      .hero .inner{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2, minmax(0,1fr))}
+      .series{grid-template-columns:repeat(3, minmax(0,1fr))}
+      .two{grid-template-columns:1fr}
+      .flow{grid-template-columns:repeat(2, minmax(0,1fr))}
+      .foot{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 640px){
+      .grid{grid-template-columns:1fr}
+      .flow{grid-template-columns:1fr}
+      .menu{gap:.7rem}
     }
   </style>
 </head>
+
 <body>
-<div class="page">
-  <!-- Header -->
-  <header>
-    <nav class="nav">
-      <div class="brand">
-        <div class="brand-logo">SZ</div>
-        <div>
-          <div class="brand-text-main">SNBET® / EASYFULL</div>
-          <div class="brand-text-sub">Golden Zipper Industrial Group</div>
+  <!-- Top utility bar (languages + quick links) -->
+  <div class="topbar">
+    <div class="inner">
+      <div class="left">
+        <span class="pill">Language</span>
+        <div class="lang">
+          <a href="#">EN</a>
+          <a href="#">中文</a>
+          <a href="#">日本語</a>
         </div>
       </div>
-      <div class="nav-links">
-        <a href="#home">Home</a>
+      <div class="right quick">
+        <a href="#contact">Contact</a>
+        <span style="opacity:.5">|</span>
+        <a href="#new">New Showcase</a>
+        <span style="opacity:.5">|</span>
         <a href="#about">About</a>
-        <a href="#business">Business Lines</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#quality">Quality</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main navigation (product center style) -->
+  <header>
+    <div class="nav">
+      <a class="brand" href="#home">
+        <div class="logo">SZ</div>
+        <div>
+          <div class="name">SNBET® / EASYFULL</div>
+          <div class="sub">Golden Zipper Industrial Group</div>
+        </div>
+      </a>
+
+      <nav class="menu">
+        <a class="item" href="#home">Home</a>
+        <a class="item" href="#new">Showcase</a>
+
+        <div class="item has-dd">
+          <span>Product Center ▾</span>
+          <div class="dropdown">
+            <div class="dd-title">Solutions</div>
+            <div class="dd-grid">
+              <a class="dd-link" href="#solutions">SNBET® Zippers</a>
+              <a class="dd-link" href="#solutions">EasyFull® Packaging</a>
+              <a class="dd-link" href="#solutions">Garment Hangers</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="item has-dd">
+          <span>Series ▾</span>
+          <div class="dropdown">
+            <div class="dd-title">Theme series</div>
+            <div class="dd-grid">
+              <a class="dd-link" href="#series">Sports</a>
+              <a class="dd-link" href="#series">Workwear</a>
+              <a class="dd-link" href="#series">Menswear</a>
+              <a class="dd-link" href="#series">Womenswear</a>
+              <a class="dd-link" href="#series">Kidswear</a>
+              <a class="dd-link" href="#series">Eco</a>
+            </div>
+          </div>
+        </div>
+
+        <a class="item" href="#quality">Quality</a>
+        <a class="item" href="#global">Global</a>
+        <a class="cta" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="inner">
+      <div>
+        <div class="kicker">Integrated trims & packaging supplier</div>
+        <h1>Industrial-grade <span class="accent">zippers, packaging & hangers</span> for global apparel brands.</h1>
+        <p>
+          Golden Zipper Industrial Group integrates SNBET® zippers and EasyFull® packaging & hangers to help
+          apparel brands streamline sourcing with a one-stop, compliant, and scalable manufacturing partner.
+        </p>
+        <div class="badges">
+          <span class="badge"><span class="dot"></span> 20+ years experience</span>
+          <span class="badge">OEM &amp; ODM capable</span>
+          <span class="badge">Export programs: US / EU / Japan / Australia</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn1" href="#contact">Talk to our team</a>
+          <a class="btn2" href="#solutions">View product center</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="title">Key Metrics</div>
+        <div class="sub">Designed for high-volume programs with global brands.</div>
+        <div class="metrics">
+          <div class="m">
+            <div class="l">Zippers / day</div>
+            <div class="v">350,000 pcs</div>
+            <div class="n">Nylon, vislon & metal</div>
+          </div>
+          <div class="m">
+            <div class="l">Zippers / year</div>
+            <div class="v">125M pcs</div>
+            <div class="n">Industrial + kidswear lines</div>
+          </div>
+          <div class="m">
+            <div class="l">Bags / day</div>
+            <div class="v">1,000,000+</div>
+            <div class="n">PE & biodegradable</div>
+          </div>
+          <div class="m">
+            <div class="l">Packaging site</div>
+            <div class="v">5,400 m²</div>
+            <div class="n">Film · Print · Bag-making</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- New Showcase (like 新品展示) -->
+  <section id="new" class="soft">
+    <div class="wrap">
+      <div class="label">Showcase</div>
+      <div class="title">New Showcase</div>
+      <div class="intro">
+        Present your newest zipper finishes, packaging formats, and hanger designs here. (You can later replace these
+        placeholder cards with real product photos and SKUs.)  [oai_citation:1‡THC Zipper](https://thczipper.com/web/)
+      </div>
+
+      <div class="tabs">
+        <div class="tab active">Featured</div>
+        <div class="tab">Zippers</div>
+        <div class="tab">Packaging</div>
+        <div class="tab">Hangers</div>
+      </div>
+
+      <div class="grid">
+        <div class="pcard">
+          <div class="ph"></div>
+          <div class="pb">
+            <div class="pn">Premium Finish Zipper</div>
+            <div class="pd">Engineered for fashion & performance apparel programs.</div>
+            <a class="plink" href="#solutions">Explore more →</a>
+          </div>
+        </div>
+
+        <div class="pcard">
+          <div class="ph"></div>
+          <div class="pb">
+            <div class="pn">Recycled PE Bag</div>
+            <div class="pd">Virgin to 100% recycled options with custom printing.</div>
+            <a class="plink" href="#solutions">Explore more →</a>
+          </div>
+        </div>
+
+        <div class="pcard">
+          <div class="ph"></div>
+          <div class="pb">
+            <div class="pn">Retail-ready Hanger</div>
+            <div class="pd">Custom logo, hooks, clips and finishing for programs.</div>
+            <a class="plink" href="#solutions">Explore more →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Theme series (like 主题系列) -->
+  <section id="series">
+    <div class="wrap">
+      <div class="label">Theme series</div>
+      <div class="title">Series for different apparel scenarios</div>
+      <div class="intro">
+        Inspired by the “theme series” approach: organize solutions by usage to make selection easier for customers.  [oai_citation:2‡THC Zipper](https://thczipper.com/web/)
+      </div>
+
+      <div class="series">
+        <div class="s">Sports Series</div>
+        <div class="s">Workwear Series</div>
+        <div class="s">Menswear Series</div>
+        <div class="s">Womenswear Series</div>
+        <div class="s">Kidswear Series</div>
+        <div class="s">Eco Series</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About (like 关于xxx + 图文) -->
+  <section id="about" class="soft">
+    <div class="wrap">
+      <div class="label">About</div>
+      <div class="title">About Golden Zipper Industrial Group</div>
+      <div class="intro">
+        We integrate SNBET® and EasyFull® to serve global apparel brands with zippers, garment packaging, and hangers—
+        designed for stable quality, compliance, and long-term supply.
+      </div>
+
+      <div class="two">
+        <div class="card">
+          <h3>One group, three core categories</h3>
+          <ul class="list">
+            <li><b>SNBET® Zippers</b>: nylon, vislon, metal, waterproof, double sliders.</li>
+            <li><b>EasyFull® Packaging</b>: PE bags (virgin to recycled), biodegradable bags, bubble wrap.</li>
+            <li><b>Garment Hangers</b>: PP/PS/ABS, custom logo, hooks, clips, finishes.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Why clients work with us</h3>
+          <ul class="list">
+            <li>High-volume manufacturing capacity</li>
+            <li>In-house testing & quality assurance</li>
+            <li>Support for compliance requirements</li>
+            <li>Program execution across regions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product center (solutions) -->
+  <section id="solutions">
+    <div class="wrap">
+      <div class="label">Product center</div>
+      <div class="title">Solutions</div>
+      <div class="intro">
+        A consolidated portfolio across trims and packaging—built for global apparel programs.
+      </div>
+
+      <div class="two">
+        <div class="card">
+          <h3>SNBET® Zippers</h3>
+          <ul class="list">
+            <li>Industrial and kidswear applications</li>
+            <li>Daily capacity: 350,000 pcs; yearly: 125M pcs</li>
+            <li>Testing: tensile, torsion, color fastness, washing, salt spray, flammability, XRF</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>EasyFull® Packaging & Hangers</h3>
+          <ul class="list">
+            <li>PE bags: virgin / 50% recycled / 100% recycled</li>
+            <li>Biodegradable: PLA / PBAT / starch-based</li>
+            <li>Bubble wrap formats for e-commerce protection</li>
+            <li>Hangers: PP/PS/ABS with custom logo & features</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality -->
+  <section id="quality" class="soft">
+    <div class="wrap">
+      <div class="label">Quality</div>
+      <div class="title">Quality & Safety</div>
+      <div class="intro">
+        Designed to meet global brand expectations with standardized testing and compliance programs.
+      </div>
+
+      <div class="two">
+        <div class="card">
+          <h3>In-house testing (zippers)</h3>
+          <ul class="list">
+            <li>Color fastness · washing fastness</li>
+            <li>Tensile · torsion · reciprocating pull</li>
+            <li>Salt spray / corrosion · flammability</li>
+            <li>XRF scanning for restricted substances</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Certifications & standards</h3>
+          <ul class="list">
+            <li>OEKO-TEX Standard 100 (Appendix 6 Class I)</li>
+            <li>BSCI · CPSIA · Proposition 65 · REACH</li>
+            <li>ZDHC / Detox (in progress) · Disney FAMA</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global -->
+  <section id="global">
+    <div class="wrap">
+      <div class="label">Global presence</div>
+      <div class="title">Global offices & service points</div>
+      <div class="intro">
+        Multi-region support close to sourcing hubs for faster communication and program execution.
+      </div>
+
+      <div class="two">
+        <div class="card">
+          <h3>Locations</h3>
+          <ul class="list">
+            <li>Shanghai head office</li>
+            <li>Canada (Vancouver) · India (Tirupur)</li>
+            <li>Sri Lanka (Colombo) · Bangladesh (Dhaka)</li>
+            <li>Shenzhen factory · Suzhou factory</li>
+            <li>Qingdao service point · Zaozhuang service point</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Map</h3>
+          <p style="color:var(--muted);font-size:.92rem">
+            Replace this block with a world map image later (e.g. <code>assets/world-map.jpg</code>).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service flow -->
+  <section id="flow" class="soft">
+    <div class="wrap">
+      <div class="label">Service flow</div>
+      <div class="title">From inquiry to delivery</div>
+      <div class="intro">
+        A clear process from technical consultation to sampling, mass production, and on-time shipment.
+      </div>
+
+      <div class="flow">
+        <div class="step">
+          <div class="k">Step 01</div>
+          <div class="t">Inquiry & consultation</div>
+          <div class="d">Share specs, materials, testing needs, quantity and destination.</div>
+        </div>
+        <div class="step">
+          <div class="k">Step 02</div>
+          <div class="t">Sampling & quotation</div>
+          <div class="d">Design proposal, custom sample, and detailed quotation for approval.</div>
+        </div>
+        <div class="step">
+          <div class="k">Step 03</div>
+          <div class="t">Mass production & QC</div>
+          <div class="d">In-house production with ongoing testing and quality assurance.</div>
+        </div>
+        <div class="step">
+          <div class="k">Step 04</div>
+          <div class="t">Packing & delivery</div>
+          <div class="d">Export packing, documentation, and shipment coordination worldwide.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact (like 联系我们区块 + 地址/邮箱/电话) -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="label">Contact</div>
+      <div class="title">Contact us</div>
+      <div class="intro">
+        Tell us what you need—zippers, packaging, hangers—and we’ll respond with recommendations, samples and timelines.  [oai_citation:3‡THC Zipper](https://thczipper.com/web/)
+      </div>
+
+      <div class="two">
+        <div class="card">
+          <h3>Business inquiry</h3>
+          <ul class="list">
+            <li><b>Company:</b> Golden Zipper Industrial Co., Ltd</li>
+            <li><b>Address:</b> Building 111, No. 1388 East Avenue, Guoxiang, Wuzhong, Suzhou, China 215007</li>
+            <li><b>Phone:</b> +86 139 0622 6178</li>
+            <li><b>Email:</b> <a href="mailto:pangwei@goldenzipper.com.cn">pangwei@goldenzipper.com.cn</a></li>
+            <li><b>Alt:</b> <a href="mailto:frankxu@goldenzipper.com.cn">frankxu@goldenzipper.com.cn</a></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>EasyFull® (packaging & hangers)</h3>
+          <ul class="list">
+            <li><b>Contact:</b> Daisy</li>
+            <li><b>Phone:</b> +86 133 7519 0997</li>
+            <li><b>Email:</b> <a href="mailto:chalihua@sanbaihuili.net">chalihua@sanbaihuili.net</a></li>
+            <li><b>Alt:</b> <a href="mailto:yehongjuan@sanbaihuili.net">yehongjuan@sanbaihuili.net</a></li>
+          </ul>
+          <div style="margin-top:.85rem">
+            <a class="btn1" href="mailto:pangwei@goldenzipper.com.cn">Email us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer sitemap -->
+  <footer>
+    <div class="foot">
+      <div>
+        <h4>SNBET® / EasyFull®</h4>
+        <a href="#about">About the Group</a>
+        <a href="#solutions">Product Center</a>
+        <a href="#quality">Quality & Safety</a>
         <a href="#global">Global Presence</a>
-        <a href="#contact" class="nav
+      </div>
+      <div>
+        <h4>Series</h4>
+        <a href="#series">Sports Series</a>
+        <a href="#series">Workwear Series</a>
+        <a href="#series">Kidswear Series</a>
+        <a href="#series">Eco Series</a>
+      </div>
+      <div>
+        <h4>Showcase</h4>
+        <a href="#new">Featured</a>
+        <a href="#new">Zippers</a>
+        <a href="#new">Packaging</a>
+        <a href="#new">Hangers</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="#contact">Business inquiry</a>
+        <a href="#contact">EasyFull® inquiry</a>
+        <a href="#contact">Location</a>
+      </div>
+    </div>
+
+    <div class="copy">
+      <div>© <span id="y"></span> Golden Zipper Industrial Group. All rights reserved.</div>
+      <div style="opacity:.9">SNBET® · EasyFull®</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
