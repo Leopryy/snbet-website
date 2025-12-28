@@ -1,1038 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>SNBET® | EasyFull® — Golden Zipper Industrial Group</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="SNBET zippers + EasyFull packaging & hangers. One-stop trims and packaging solutions for global apparel brands." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#ffffff;
-      --bg-soft:#f6f7fb;
-      --text:#0f172a;
-      --muted:#64748b;
-      --line:#e5e7eb;
-      --nav:#0b1220;
-      --nav2:#101a33;
-      --primary:#d6001c;
-      --primary2:#9f0417;
-      --shadow:0 18px 45px rgba(15,23,42,.10);
-      --shadow2:0 10px 28px rgba(15,23,42,.08);
-      --radius:14px;
-      --max:1160px;
-    }
-
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-      color:var(--text); background:var(--bg); line-height:1.6;
-    }
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    html{scroll-behavior:smooth}
-
-    /* ===== Top Utility Bar (Language + quick links) ===== */
-    .topbar{
-      background:var(--nav);
-      color:#e5e7eb;
-      font-size:.86rem;
-      border-bottom:1px solid rgba(255,255,255,.10);
-    }
-    .topbar .inner{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:.55rem 1.1rem;
-      display:flex; align-items:center; justify-content:space-between;
-      gap:1rem; flex-wrap:wrap;
-    }
-    .top-left,.top-right{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap}
-    .pill{
-      display:inline-flex;align-items:center;gap:.45rem;
-      padding:.22rem .6rem;border-radius:999px;
-      border:1px solid rgba(255,255,255,.16);
-      background:rgba(255,255,255,.06);
-      font-size:.78rem;color:#e5e7eb;
-    }
-    .lang a{opacity:.85;margin-right:.55rem}
-    .lang a:hover{opacity:1;text-decoration:underline}
-    .top-right a{opacity:.85}
-    .top-right a:hover{opacity:1;text-decoration:underline}
-    .sep{opacity:.35}
-
-    /* ===== Header / Main Nav ===== */
-    header{
-      position:sticky; top:0; z-index:30;
-      background:linear-gradient(180deg,var(--nav2),var(--nav));
-      border-bottom:1px solid rgba(255,255,255,.10);
-    }
-    .nav{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:.9rem 1.1rem;
-      display:flex; align-items:center; justify-content:space-between;
-      gap:1rem;
-    }
-    .brand{display:flex;align-items:center;gap:.75rem}
-    .logo{
-      width:42px;height:42px;border-radius:10px;
-      background:linear-gradient(135deg,var(--primary),var(--primary2));
-      display:flex;align-items:center;justify-content:center;
-      color:#fff;font-weight:900;font-family:Montserrat,sans-serif;
-      box-shadow:0 14px 30px rgba(214,0,28,.25);
-      letter-spacing:.06em;
-    }
-    .bname{
-      color:#fff;font-family:Montserrat,sans-serif;
-      font-weight:800;letter-spacing:.10em;text-transform:uppercase;
-      font-size:.92rem;line-height:1.1;
-    }
-    .bsub{color:#cbd5e1;font-size:.78rem;margin-top:.15rem}
-
-    .menu{
-      display:flex;align-items:center;gap:1.05rem;flex-wrap:wrap;justify-content:flex-end
-    }
-    .menu .item{
-      position:relative;
-      color:#e5e7eb;
-      font-size:.92rem;
-      opacity:.92;
-      padding:.35rem .1rem;
-      cursor:pointer;
-      user-select:none;
-    }
-    .menu .item:hover{opacity:1}
-    .menu .item::after{
-      content:"";
-      position:absolute;left:0;bottom:-10px;height:2px;width:0;
-      background:linear-gradient(to right,#fb7185,#fbbf24);
-      transition:width .2s ease;
-    }
-    .menu .item:hover::after{width:100%}
-    .cta{
-      padding:.48rem .95rem;
-      border-radius:999px;
-      background:var(--primary);
-      color:#fff;font-weight:700;font-size:.86rem;
-      border:1px solid rgba(255,255,255,.12);
-    }
-    .cta:hover{background:var(--primary2)}
-
-    /* Dropdown */
-    .has-dd{padding-right:.3rem}
-    .dropdown{
-      position:absolute;
-      top:42px; left:0;
-      min-width:300px;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:14px;
-      box-shadow:var(--shadow);
-      padding:.8rem;
-      display:none;
-    }
-    .has-dd:hover .dropdown{display:block}
-    .dd-title{
-      font-family:Montserrat,sans-serif;
-      font-weight:800;
-      font-size:.82rem;
-      text-transform:uppercase;
-      letter-spacing:.10em;
-      color:var(--text);
-      margin:.2rem 0 .55rem;
-    }
-    .dd-grid{display:grid;grid-template-columns:1fr;gap:.35rem}
-    .dd-link{
-      padding:.55rem .6rem;border-radius:10px;
-      border:1px solid transparent;
-      color:var(--text);font-size:.92rem;
-    }
-    .dd-link:hover{border-color:var(--line);background:var(--bg-soft)}
-
-    /* Mobile menu */
-    .burger{
-      display:none;
-      width:42px;height:38px;border-radius:10px;
-      border:1px solid rgba(255,255,255,.20);
-      background:rgba(255,255,255,.06);
-      color:#fff;
-      align-items:center;justify-content:center;
-      font-weight:800;
-      cursor:pointer;
-    }
-    .mobile-panel{
-      display:none;
-      background:#0b1220;
-      border-top:1px solid rgba(255,255,255,.10);
-    }
-    .mobile-panel .inner{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:.85rem 1.1rem 1.1rem;
-      display:grid; gap:.35rem;
-    }
-    .m-link{
-      padding:.65rem .7rem;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.05);
-      color:#e5e7eb;
-      font-weight:600;
-    }
-    .m-link:hover{background:rgba(255,255,255,.08)}
-    .mobile-panel.show{display:block}
-
-    /* ===== Hero (two-message banner like the sample site) ===== */
-    .hero{
-      background:
-        radial-gradient(circle at 15% 0%, rgba(214,0,28,.14), transparent 55%),
-        radial-gradient(circle at 85% 0%, rgba(59,130,246,.12), transparent 55%),
-        linear-gradient(180deg,#0b1220 0%, #0b1220 68%, #ffffff 68%, #ffffff 100%);
-      padding:2.9rem 1.1rem 0;
-    }
-    .hero .wrap{
-      max-width:var(--max);
-      margin:0 auto;
-      padding-bottom:2.2rem;
-      display:grid;
-      grid-template-columns:minmax(0,3fr) minmax(0,2fr);
-      gap:1.7rem;
-      align-items:start;
-    }
-    .hero-split{
-      display:grid;
-      gap:1.1rem;
-      margin-bottom:1.1rem;
-    }
-    .hero-block{
-      border-left:3px solid rgba(255,255,255,.18);
-      padding-left:1rem;
-    }
-    .kicker{
-      color:#cbd5e1;
-      text-transform:uppercase;
-      letter-spacing:.22em;
-      font-size:.78rem;
-      font-weight:700;
-      margin-bottom:.55rem;
-    }
-    h1{
-      font-family:Montserrat,sans-serif;
-      font-size:clamp(2.0rem, 3.4vw, 2.65rem);
-      line-height:1.12;
-      color:#fff;
-      margin-bottom:.75rem;
-      letter-spacing:-.01em;
-    }
-    .accent{
-      background:linear-gradient(to right,#fb7185,#fbbf24);
-      -webkit-background-clip:text;
-      color:transparent;
-    }
-    .hero p{
-      color:#e2e8f0;
-      opacity:.92;
-      max-width:46rem;
-      font-size:.98rem;
-    }
-    .badges{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.1rem}
-    .badge{
-      display:inline-flex;align-items:center;gap:.45rem;
-      padding:.26rem .72rem;border-radius:999px;
-      border:1px solid rgba(255,255,255,.18);
-      background:rgba(255,255,255,.06);
-      color:#e5e7eb;
-      font-size:.8rem;
-      font-weight:600;
-    }
-    .dot{width:7px;height:7px;border-radius:999px;background:#22c55e}
-
-    .hero-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.25rem}
-    .btn1{
-      padding:.72rem 1.25rem;border-radius:999px;
-      background:var(--primary);color:#fff;font-weight:800;
-      border:none;cursor:pointer;
-      box-shadow:0 16px 34px rgba(214,0,28,.25);
-    }
-    .btn1:hover{background:var(--primary2)}
-    .btn2{
-      padding:.7rem 1.2rem;border-radius:999px;
-      background:transparent;color:#fff;font-weight:800;
-      border:1px solid rgba(255,255,255,.25);
-      cursor:pointer;
-    }
-    .btn2:hover{background:rgba(255,255,255,.08)}
-
-    .hero-card{
-      background:#fff;
-      border-radius:18px;
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-      padding:1.1rem 1.1rem 1rem;
-    }
-    .hero-card .title{
-      font-family:Montserrat,sans-serif;
-      font-weight:900;
-      font-size:.9rem;
-      letter-spacing:.10em;
-      text-transform:uppercase;
-      margin-bottom:.15rem;
-    }
-    .hero-card .sub{color:var(--muted);font-size:.86rem;margin-bottom:.85rem}
-    .metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
-    .m{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:.65rem .7rem;
-      background:var(--bg-soft);
-    }
-    .m .l{color:var(--muted);font-size:.78rem}
-    .m .v{font-family:Montserrat,sans-serif;font-weight:900;font-size:1.05rem}
-    .m .n{color:var(--muted);font-size:.78rem}
-
-    /* ===== Sections ===== */
-    section{padding:3.5rem 1.1rem}
-    .wrap{max-width:var(--max);margin:0 auto}
-    .label{
-      font-size:.78rem;
-      letter-spacing:.22em;
-      text-transform:uppercase;
-      color:var(--muted);
-      margin-bottom:.35rem;
-      font-weight:800;
-    }
-    .title{
-      font-family:Montserrat,sans-serif;
-      font-size:1.55rem;
-      font-weight:900;
-      margin-bottom:.55rem;
-      letter-spacing:-.01em;
-    }
-    .intro{color:var(--muted);max-width:52rem}
-
-    .soft{background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
-
-    /* ===== Showcase (New) with tabs (like sample site) ===== */
-    .tabs{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.15rem}
-    .tab{
-      padding:.36rem .86rem;border-radius:999px;
-      border:1px solid var(--line);
-      background:#fff;color:var(--muted);
-      font-size:.88rem;font-weight:700;
-      cursor:pointer;
-    }
-    .tab.active{
-      border-color:rgba(214,0,28,.35);
-      background:rgba(214,0,28,.06);
-      color:var(--text);
-    }
-
-    .grid{
-      margin-top:1.2rem;
-      display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:1rem;
-    }
-    .pcard{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:0 10px 26px rgba(15,23,42,.05);
-      overflow:hidden;
-      transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
-    }
-    .pcard:hover{
-      transform:translateY(-3px);
-      box-shadow:0 18px 45px rgba(15,23,42,.10);
-      border-color:rgba(214,0,28,.28);
-    }
-    .ph{
-      height:150px;
-      background:
-        linear-gradient(135deg, rgba(214,0,28,.12), rgba(59,130,246,.10)),
-        radial-gradient(circle at 30% 30%, rgba(255,255,255,.75), rgba(255,255,255,0));
-      display:flex;align-items:flex-end;justify-content:flex-start;
-      padding:.75rem;
-    }
-    .chip{
-      display:inline-flex;align-items:center;
-      padding:.22rem .55rem;border-radius:999px;
-      background:rgba(255,255,255,.78);
-      border:1px solid rgba(15,23,42,.08);
-      font-size:.78rem;font-weight:800;color:var(--text);
-    }
-    .pb{padding:.95rem .95rem 1rem}
-    .pn{font-family:Montserrat,sans-serif;font-weight:900;margin-bottom:.25rem}
-    .pd{color:var(--muted);font-size:.9rem;margin-bottom:.75rem}
-    .plink{
-      display:inline-flex;align-items:center;gap:.35rem;
-      color:var(--primary2);font-weight:900;font-size:.9rem;
-    }
-
-    /* ===== Theme series (like sample site) ===== */
-    .series{
-      margin-top:1.1rem;
-      display:grid;
-      grid-template-columns:repeat(6,minmax(0,1fr));
-      gap:.75rem;
-    }
-    .s{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:.95rem .8rem;
-      text-align:center;
-      color:var(--text);
-      font-weight:900;
-      font-size:.9rem;
-      box-shadow:0 10px 22px rgba(15,23,42,.04);
-      transition:transform .15s ease, border-color .15s ease;
-    }
-    .s:hover{transform:translateY(-2px);border-color:rgba(214,0,28,.28)}
-
-    /* ===== Two-column cards ===== */
-    .two{
-      margin-top:1.35rem;
-      display:grid;
-      grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
-      gap:1.2rem;
-      align-items:start;
-    }
-    .card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow2);
-      padding:1.05rem 1.05rem 1rem;
-    }
-    .card h3{
-      font-family:Montserrat,sans-serif;
-      font-size:1.02rem;
-      font-weight:900;
-      margin-bottom:.35rem;
-    }
-    .list{margin-top:.55rem; color:var(--muted); font-size:.94rem}
-    .list li{margin-left:1.05rem; margin-bottom:.28rem}
-
-    /* ===== Flow ===== */
-    .flow{
-      margin-top:1.2rem;
-      display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:.9rem;
-    }
-    .step{
-      background:#fff;border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:1rem .95rem 1rem;
-      box-shadow:0 10px 22px rgba(15,23,42,.04);
-    }
-    .step .k{
-      font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;
-      color:var(--muted);margin-bottom:.2rem;font-weight:800;
-    }
-    .step .t{font-family:Montserrat,sans-serif;font-weight:900;margin-bottom:.35rem}
-    .step .d{color:var(--muted);font-size:.92rem}
-
-    /* ===== Footer sitemap (like sample site) ===== */
-    footer{
-      background:#0b1220;
-      color:#cbd5e1;
-      padding:2.2rem 1.1rem 1.1rem;
-      border-top:1px solid rgba(255,255,255,.10);
-    }
-    .foot{
-      max-width:var(--max);margin:0 auto;
-      display:grid;
-      grid-template-columns:1.2fr 1fr 1fr 1fr;
-      gap:1.2rem;
-    }
-    .foot h4{
-      font-family:Montserrat,sans-serif;
-      font-size:.9rem;
-      letter-spacing:.10em;
-      text-transform:uppercase;
-      margin-bottom:.6rem;
-      color:#fff;
-      font-weight:900;
-    }
-    .foot a{
-      display:block;color:#cbd5e1;opacity:.85;
-      margin-bottom:.35rem;font-size:.92rem;
-    }
-    .foot a:hover{opacity:1;text-decoration:underline}
-    .copy{
-      max-width:var(--max);margin:.95rem auto 0;
-      padding-top:.95rem;
-      border-top:1px solid rgba(255,255,255,.12);
-      font-size:.86rem;
-      color:#94a3b8;
-      display:flex;justify-content:space-between;gap:.8rem;flex-wrap:wrap;
-    }
-
-    /* ===== Responsive ===== */
-    @media (max-width: 1040px){
-      .hero .wrap{grid-template-columns:1fr}
-      .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .series{grid-template-columns:repeat(3,minmax(0,1fr))}
-      .two{grid-template-columns:1fr}
-      .flow{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .foot{grid-template-columns:1fr 1fr}
-    }
-    @media (max-width: 740px){
-      .menu{display:none}
-      .burger{display:flex}
-      .grid{grid-template-columns:1fr}
-      .flow{grid-template-columns:1fr}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easyfull & SNBET Group | Global Packaging & Zipper Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        /* 平滑滚动 */
+        html { scroll-behavior: smooth; }
+    </style>
 </head>
+<body class="text-gray-800 bg-white">
 
-<body>
-  <!-- Top Utility Bar -->
-  <div class="topbar">
-    <div class="inner">
-      <div class="top-left">
-        <span class="pill">Language</span>
-        <div class="lang">
-          <a href="#" aria-label="English">EN</a>
-          <a href="#" aria-label="Chinese">中文</a>
-          <a href="#" aria-label="Japanese">日本語</a>
+    <nav class="flex justify-between items-center py-5 px-6 md:px-12 fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
+        <div class="text-xl font-bold tracking-tight">EASYFULL & SNBET</div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-500">
+            <a href="#products" class="hover:text-black transition">PRODUCTS</a>
+            <a href="#capability" class="hover:text-black transition">MANUFACTURING</a>
+            <a href="#clients" class="hover:text-black transition">CLIENTS</a>
         </div>
-      </div>
+        <a href="#contact" class="px-5 py-2 bg-black text-white text-sm font-medium hover:bg-gray-800 transition">Contact Us</a>
+    </nav>
 
-      <div class="top-right">
-        <a href="#contact">Contact</a>
-        <span class="sep">|</span>
-        <a href="#showcase">New Showcase</a>
-        <span class="sep">|</span>
-        <a href="#about">About</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Main Nav -->
-  <header>
-    <div class="nav">
-      <a class="brand" href="#home">
-        <div class="logo">SZ</div>
-        <div>
-          <div class="bname">SNBET® / EASYFULL</div>
-          <div class="bsub">Golden Zipper Industrial Group</div>
+    <header class="h-screen flex flex-col justify-center items-center text-center px-4 pt-16">
+        <h1 class="text-5xl md:text-7xl font-light tracking-tight mb-6 text-gray-900">
+            The Invisible Detail.<br>Visible Quality.
+        </h1>
+        <p class="text-gray-500 max-w-xl mb-10 text-lg font-light leading-relaxed">
+            Since 2001. Your one-stop global partner for premium zippers, sustainable packaging, and garment hangers.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4">
+            <a href="#products" class="px-8 py-3 bg-black text-white text-sm font-medium hover:bg-gray-800 transition">VIEW PRODUCTS</a>
+            <a href="#contact" class="px-8 py-3 border border-gray-300 text-sm font-medium hover:border-black transition">GET A QUOTE</a>
         </div>
-      </a>
+    </header>
 
-      <div class="burger" id="burger" aria-label="Open menu">≡</div>
-
-      <nav class="menu" aria-label="Main navigation">
-        <a class="item" href="#home">Home</a>
-        <a class="item" href="#showcase">New</a>
-
-        <div class="item has-dd">
-          <span>Product Center ▾</span>
-          <div class="dropdown">
-            <div class="dd-title">Solutions</div>
-            <div class="dd-grid">
-              <a class="dd-link" href="#solutions">SNBET® Zippers</a>
-              <a class="dd-link" href="#solutions">EasyFull® Packaging</a>
-              <a class="dd-link" href="#solutions">Garment Hangers</a>
+    <section id="products" class="py-24 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-light mb-4">Our Solutions</h2>
+                <div class="w-12 h-0.5 bg-black mx-auto"></div>
             </div>
-          </div>
-        </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="group">
+                    <div class="bg-gray-100 aspect-[4/5] flex items-center justify-center relative overflow-hidden mb-6">
+                        <div class="text-center p-8">
+                            <h3 class="text-2xl font-light text-gray-400">ZIPPER IMAGE</h3>
+                            <p class="text-xs text-gray-400 mt-2">(Save image as zipper.jpg)</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-medium mb-2">Premium Zippers</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        Nylon, Vislon, and Metal zippers. Featuring custom sliders (Panda/Cat designs). 
+                        <br><strong>Capacity:</strong> 125 Million/Year.
+                    </p>
+                </div>
 
-        <div class="item has-dd">
-          <span>Theme Series ▾</span>
-          <div class="dropdown">
-            <div class="dd-title">Series</div>
-            <div class="dd-grid">
-              <a class="dd-link" href="#series">Sport</a>
-              <a class="dd-link" href="#series">Work</a>
-              <a class="dd-link" href="#series">Man</a>
-              <a class="dd-link" href="#series">Woman</a>
-              <a class="dd-link" href="#series">Kid</a>
-              <a class="dd-link" href="#series">Sustainable</a>
+                <div class="group">
+                    <div class="bg-gray-100 aspect-[4/5] flex items-center justify-center relative overflow-hidden mb-6">
+                         <div class="text-center p-8">
+                            <h3 class="text-2xl font-light text-gray-400">BAG IMAGE</h3>
+                             <p class="text-xs text-gray-400 mt-2">(Save image as bag.jpg)</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-medium mb-2">Sustainable Packaging</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        PE Bags (Virgin/Recycled), Biodegradable (PLA/PBAT), and Bubble Wrap. 
+                        <br><strong>Capacity:</strong> 1 Million Bags/Day.
+                    </p>
+                </div>
+
+                <div class="group">
+                    <div class="bg-gray-100 aspect-[4/5] flex items-center justify-center relative overflow-hidden mb-6">
+                         <div class="text-center p-8">
+                            <h3 class="text-2xl font-light text-gray-400">HANGER IMAGE</h3>
+                             <p class="text-xs text-gray-400 mt-2">(Save image as hanger.jpg)</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-medium mb-2">Garment Hangers</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        PP, PS, and ABS materials. Anti-slip coatings and custom logo options available for retail & factory use.
+                    </p>
+                </div>
             </div>
-          </div>
         </div>
+    </section>
 
-        <a class="item" href="#quality">Quality</a>
-        <a class="item" href="#global">Global</a>
-        <a class="cta" href="#contact">Contact</a>
-      </nav>
-    </div>
-
-    <!-- Mobile panel -->
-    <div class="mobile-panel" id="mobilePanel">
-      <div class="inner">
-        <a class="m-link" href="#home">Home</a>
-        <a class="m-link" href="#showcase">New Showcase</a>
-        <a class="m-link" href="#solutions">Product Center</a>
-        <a class="m-link" href="#series">Theme Series</a>
-        <a class="m-link" href="#quality">Quality</a>
-        <a class="m-link" href="#global">Global</a>
-        <a class="m-link" href="#contact">Contact</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="wrap">
-      <div>
-        <!-- Two-message banner like the sample site -->
-        <div class="hero-split">
-          <div class="hero-block">
-            <div class="kicker">Dare to innovate · Deliver with consistency</div>
-            <h1>Integrated <span class="accent">zippers, packaging & hangers</span> for global apparel programs.</h1>
-            <p>
-              Golden Zipper Industrial Group combines SNBET® and EasyFull® to help brands streamline sourcing with a
-              one-stop, compliant, scalable manufacturing partner.
-            </p>
-          </div>
-
-          <div class="hero-block">
-            <div class="kicker">New beginning · New journey</div>
-            <p>
-              We support OEM/ODM execution across regions—from sampling to bulk production—built around quality,
-              testing, and stable capacity for long-term programs.
-            </p>
-          </div>
+    <section id="capability" class="py-24 bg-gray-50 px-6 md:px-12">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-3xl font-light mb-6">Manufacturing Excellence.</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    With factories in Suzhou and Shenzhen, and offices in Canada, India, and Sri Lanka, we support global apparel brands with speed and consistency.
+                    Our in-house labs perform rigorous Salt Spray, Washing Fastness, and Tensile Tests.
+                </p>
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                        <span class="text-sm font-medium">Oeko-Tex Standard 100 Certified</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                        <span class="text-sm font-medium">Disney FAMA Authorized Facility</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                        <span class="text-sm font-medium">Biodegradable Options (PLA/PBAT)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-6">
+                <div class="bg-white p-8 shadow-sm">
+                    <div class="text-4xl font-bold mb-2">20+</div>
+                    <div class="text-xs text-gray-500 uppercase tracking-widest">Years Experience</div>
+                </div>
+                <div class="bg-white p-8 shadow-sm">
+                    <div class="text-4xl font-bold mb-2">5,400</div>
+                    <div class="text-xs text-gray-500 uppercase tracking-widest">m² Factory Space</div>
+                </div>
+                <div class="bg-white p-8 shadow-sm">
+                    <div class="text-4xl font-bold mb-2">1M+</div>
+                    <div class="text-xs text-gray-500 uppercase tracking-widest">Daily Bag Output</div>
+                </div>
+                <div class="bg-white p-8 shadow-sm">
+                    <div class="text-4xl font-bold mb-2">125M</div>
+                    <div class="text-xs text-gray-500 uppercase tracking-widest">Annual Zippers</div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="badges">
-          <span class="badge"><span class="dot"></span> 20+ years manufacturing experience</span>
-          <span class="badge">OEM &amp; ODM capable</span>
-          <span class="badge">Export: US / EU / Japan / Australia</span>
+    <section id="clients" class="py-20 px-6 text-center border-t border-gray-200">
+        <p class="text-sm text-gray-400 uppercase tracking-widest mb-10">Trusted By Global Brands</p>
+        <div class="flex flex-wrap justify-center gap-12 opacity-60 grayscale hover:grayscale-0 transition duration-500">
+            <span class="text-xl font-bold text-gray-300">CHICCO</span>
+            <span class="text-xl font-bold text-gray-300">TARGET</span>
+            <span class="text-xl font-bold text-gray-300">HUMMEL</span>
+            <span class="text-xl font-bold text-gray-300">COTTON:ON</span>
+            <span class="text-xl font-bold text-gray-300">KIDILIZ</span>
         </div>
+    </section>
 
-        <div class="hero-actions">
-          <a class="btn1" href="#contact">Talk to our team</a>
-          <a class="btn2" href="#showcase">Explore new showcase</a>
-        </div>
-      </div>
-
-      <aside class="hero-card">
-        <div class="title">Key Metrics</div>
-        <div class="sub">Designed for high-volume programs with global brands.</div>
-
-        <div class="metrics">
-          <div class="m">
-            <div class="l">Zippers / day</div>
-            <div class="v">350,000 pcs</div>
-            <div class="n">Nylon · Vislon · Metal</div>
-          </div>
-          <div class="m">
-            <div class="l">Zippers / year</div>
-            <div class="v">125M pcs</div>
-            <div class="n">Multiple product lines</div>
-          </div>
-          <div class="m">
-            <div class="l">Bags / day</div>
-            <div class="v">1,000,000+</div>
-            <div class="n">PE & biodegradable</div>
-          </div>
-          <div class="m">
-            <div class="l">Packaging site</div>
-            <div class="v">5,400 m²</div>
-            <div class="n">Film · Print · Bag-making</div>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <!-- NEW SHOWCASE -->
-  <section id="showcase" class="soft">
-    <div class="wrap">
-      <div class="label">New showcase</div>
-      <div class="title">Featured innovations & new releases</div>
-      <div class="intro">
-        This section mirrors the “New Showcase / Selected” pattern on the demo site: you can later replace the
-        placeholders with real SKUs, finishes, and product photos.  [oai_citation:1‡THC Zipper](https://thczipper.com/web/index.asp?utm_source=chatgpt.com)
-      </div>
-
-      <div class="tabs" role="tablist" aria-label="Showcase tabs">
-        <button class="tab active" data-filter="all" role="tab">Selected</button>
-        <button class="tab" data-filter="zippers" role="tab">Zippers</button>
-        <button class="tab" data-filter="packaging" role="tab">Packaging</button>
-        <button class="tab" data-filter="hangers" role="tab">Hangers</button>
-      </div>
-
-      <div class="grid" id="cards">
-        <!-- ZIPPERS -->
-        <div class="pcard" data-cat="zippers">
-          <div class="ph"><span class="chip">Zippers</span></div>
-          <div class="pb">
-            <div class="pn">Water-repellent zipper finish</div>
-            <div class="pd">For outdoor & performance apparel programs.</div>
-            <a class="plink" href="#solutions">Explore more →</a>
-          </div>
-        </div>
-
-        <div class="pcard" data-cat="zippers">
-          <div class="ph"><span class="chip">Zippers</span></div>
-          <div class="pb">
-            <div class="pn">Metallic film resin zipper</div>
-            <div class="pd">Shiny look, engineered for durability.</div>
-            <a class="plink" href="#solutions">Explore more →</a>
-          </div>
-        </div>
-
-        <!-- PACKAGING -->
-        <div class="pcard" data-cat="packaging">
-          <div class="ph"><span class="chip">Packaging</span></div>
-          <div class="pb">
-            <div class="pn">100% recycled PE bag</div>
-            <div class="pd">Custom printing, thickness & sizes.</div>
-            <a class="plink" href="#solutions">Explore more →</a>
-          </div>
-        </div>
-
-        <div class="pcard" data-cat="packaging">
-          <div class="ph"><span class="chip">Packaging</span></div>
-          <div class="pb">
-            <div class="pn">Biodegradable mailer</div>
-            <div class="pd">PLA/PBAT/starch-based options.</div>
-            <a class="plink" href="#solutions">Explore more →</a>
-          </div>
-        </div>
-
-        <!-- HANGERS -->
-        <div class="pcard" data-cat="hangers">
-          <div class="ph"><span class="chip">Hangers</span></div>
-          <div class="pb">
-            <div class="pn">Retail-ready hanger</div>
-            <div class="pd">Custom logo, hooks, clips & finishing.</div>
-            <a class="plink" href="#solutions">Explore more →</a>
-          </div>
-        </div>
-
-        <div class="pcard" data-cat="hangers">
-          <div class="ph"><span class="chip">Hangers</span></div>
-          <div class="pb">
-            <div class="pn">Anti-slip coat hanger</div>
-            <div class="pd">Optimized for store operations.</div>
-            <a class="plink" href="#solutions">Explore more →</a>
-          </div>
-        </div>
-
-        <!-- SELECTED (mix) -->
-        <div class="pcard" data-cat="zippers">
-          <div class="ph"><span class="chip">Selected</span></div>
-          <div class="pb">
-            <div class="pn">Kidswear-safe zipper program</div>
-            <div class="pd">Designed for sensitive product standards.</div>
-            <a class="plink" href="#quality">Quality & safety →</a>
-          </div>
-        </div>
-
-        <div class="pcard" data-cat="packaging">
-          <div class="ph"><span class="chip">Selected</span></div>
-          <div class="pb">
-            <div class="pn">Printed PE bag system</div>
-            <div class="pd">Film → print → bag-making in one site.</div>
-            <a class="plink" href="#solutions">Packaging center →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- THEME SERIES -->
-  <section id="series">
-    <div class="wrap">
-      <div class="label">Theme series</div>
-      <div class="title">Select by apparel scenario</div>
-      <div class="intro">
-        Like the demo site’s theme blocks, we group solutions by usage so customers can choose faster.  [oai_citation:2‡THC Zipper](https://thczipper.com/web/index.asp?utm_source=chatgpt.com)
-      </div>
-
-      <div class="series" role="list">
-        <a class="s" href="#solutions" role="listitem">Sport</a>
-        <a class="s" href="#solutions" role="listitem">Work</a>
-        <a class="s" href="#solutions" role="listitem">Man</a>
-        <a class="s" href="#solutions" role="listitem">Woman</a>
-        <a class="s" href="#solutions" role="listitem">Kid</a>
-        <a class="s" href="#solutions" role="listitem">Sustainable</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="soft">
-    <div class="wrap">
-      <div class="label">About</div>
-      <div class="title">About Golden Zipper Industrial Group</div>
-      <div class="intro">
-        We integrate SNBET® and EasyFull® to support global brands with zippers, garment packaging and hangers—focused on
-        quality, testing, compliance and stable supply.
-      </div>
-
-      <div class="two">
-        <div class="card">
-          <h3>One group, three core categories</h3>
-          <ul class="list">
-            <li><b>SNBET® Zippers</b>: nylon, vislon, metal, waterproof, double sliders.</li>
-            <li><b>EasyFull® Packaging</b>: PE bags (virgin to recycled), biodegradable bags, bubble wrap.</li>
-            <li><b>Garment Hangers</b>: PP/PS/ABS, custom logo, hooks, clips, finishes.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>What clients value</h3>
-          <ul class="list">
-            <li>High-volume manufacturing capacity & lead-time control</li>
-            <li>In-house testing & standardized quality checks</li>
-            <li>Support for chemical / social compliance requirements</li>
-            <li>Program execution across regions</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOLUTIONS / PRODUCT CENTER -->
-  <section id="solutions">
-    <div class="wrap">
-      <div class="label">Product center</div>
-      <div class="title">Solutions</div>
-      <div class="intro">
-        A consolidated portfolio across trims and packaging—built for long-term global apparel programs.
-      </div>
-
-      <div class="two">
-        <div class="card">
-          <h3>SNBET® Zippers</h3>
-          <ul class="list">
-            <li>Industrial & kidswear applications</li>
-            <li>Capacity: 350,000 pcs/day; 125M pcs/year</li>
-            <li>Types: nylon · vislon · metal · coil · waterproof · double sliders</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>EasyFull® Packaging & Hangers</h3>
-          <ul class="list">
-            <li>PE bags: virgin / 50% recycled / 100% recycled</li>
-            <li>Biodegradable: PLA / PBAT / starch-based</li>
-            <li>Hangers: PP/PS/ABS with custom logo & features</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUALITY -->
-  <section id="quality" class="soft">
-    <div class="wrap">
-      <div class="label">Quality</div>
-      <div class="title">Quality & safety</div>
-      <div class="intro">
-        Standardized testing and compliance programs designed for brand requirements.
-      </div>
-
-      <div class="two">
-        <div class="card">
-          <h3>In-house testing (zippers)</h3>
-          <ul class="list">
-            <li>Color fastness · washing fastness</li>
-            <li>Tensile · torsion · reciprocating pull</li>
-            <li>Salt spray / corrosion · flammability</li>
-            <li>XRF scanning for restricted substances</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Compliance programs</h3>
-          <ul class="list">
-            <li>OEKO-TEX® Standard 100 (Appendix 6 Class I)</li>
-            <li>REACH · Proposition 65 · CPSIA</li>
-            <li>BSCI · Disney FAMA · customer-specific programs</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GLOBAL -->
-  <section id="global">
-    <div class="wrap">
-      <div class="label">Global presence</div>
-      <div class="title">Offices & service points</div>
-      <div class="intro">
-        Multi-region support close to sourcing hubs for faster communication and program execution.
-      </div>
-
-      <div class="two">
-        <div class="card">
-          <h3>Locations</h3>
-          <ul class="list">
-            <li>Shanghai head office</li>
-            <li>Canada (Vancouver) · India (Tirupur)</li>
-            <li>Sri Lanka (Colombo) · Bangladesh (Dhaka)</li>
-            <li>Shenzhen factory · Suzhou factory</li>
-            <li>Qingdao service point · Zaozhuang service point</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Map placeholder</h3>
-          <p style="color:var(--muted);font-size:.95rem">
-            Replace this card with your world map image later (e.g. <code>/assets/world-map.jpg</code>).
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FLOW -->
-  <section id="flow" class="soft">
-    <div class="wrap">
-      <div class="label">Service flow</div>
-      <div class="title">From inquiry to delivery</div>
-      <div class="intro">
-        A clear process from consultation to sampling, mass production, and shipment.
-      </div>
-
-      <div class="flow">
-        <div class="step">
-          <div class="k">Step 01</div>
-          <div class="t">Inquiry & consultation</div>
-          <div class="d">Share specs, materials, testing needs, quantity and destination.</div>
-        </div>
-        <div class="step">
-          <div class="k">Step 02</div>
-          <div class="t">Sampling & quotation</div>
-          <div class="d">Design proposal, custom sample, and quotation for approval.</div>
-        </div>
-        <div class="step">
-          <div class="k">Step 03</div>
-          <div class="t">Mass production & QC</div>
-          <div class="d">In-house processes with ongoing testing and quality assurance.</div>
-        </div>
-        <div class="step">
-          <div class="k">Step 04</div>
-          <div class="t">Packing & delivery</div>
-          <div class="d">Export packing, documentation, and shipping coordination worldwide.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="wrap">
-      <div class="label">Contact</div>
-      <div class="title">Contact us</div>
-      <div class="intro">
-        Tell us what you need—zippers, packaging or hangers—and we’ll respond with recommendations, samples and timelines.
-      </div>
-
-      <div class="two">
-        <div class="card">
-          <h3>Business inquiry</h3>
-          <ul class="list">
-            <li><b>Company:</b> Golden Zipper Industrial Co., Ltd</li>
-            <li><b>Address:</b> Building 111, No. 1388 East Avenue, Guoxiang, Wuzhong, Suzhou, China 215007</li>
-            <li><b>Phone:</b> +86 139 0622 6178</li>
-            <li><b>Email:</b> <a href="mailto:pangwei@goldenzipper.com.cn">pangwei@goldenzipper.com.cn</a></li>
-            <li><b>Alt:</b> <a href="mailto:frankxu@goldenzipper.com.cn">frankxu@goldenzipper.com.cn</a></li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>EasyFull® (packaging & hangers)</h3>
-          <ul class="list">
-            <li><b>Contact:</b> Daisy</li>
-            <li><b>Phone:</b> +86 133 7519 0997</li>
-            <li><b>Email:</b> <a href="mailto:chalihua@sanbaihuili.net">chalihua@sanbaihuili.net</a></li>
-            <li><b>Alt:</b> <a href="mailto:yehongjuan@sanbaihuili.net">yehongjuan@sanbaihuili.net</a></li>
-          </ul>
-          <div style="margin-top:.9rem">
-            <a class="btn1" href="mailto:pangwei@goldenzipper.com.cn">Email us</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER (Sitemap columns like demo) -->
-  <footer>
-    <div class="foot">
-      <div>
-        <h4>SNBET® / EasyFull®</h4>
-        <a href="#about">About the Group</a>
-        <a href="#solutions">Product Center</a>
-        <a href="#quality">Quality & Safety</a>
-        <a href="#global">Global Presence</a>
-      </div>
-      <div>
-        <h4>Theme series</h4>
-        <a href="#series">Sport</a>
-        <a href="#series">Work</a>
-        <a href="#series">Man</a>
-        <a href="#series">Woman</a>
-        <a href="#series">Kid</a>
-        <a href="#series">Sustainable</a>
-      </div>
-      <div>
-        <h4>New showcase</h4>
-        <a href="#showcase">Selected</a>
-        <a href="#showcase">Zippers</a>
-        <a href="#showcase">Packaging</a>
-        <a href="#showcase">Hangers</a>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <a href="#contact">Business inquiry</a>
-        <a href="#contact">EasyFull® inquiry</a>
-        <a href="#contact">Location</a>
-      </div>
-    </div>
-
-    <div class="copy">
-      <div>© <span id="y"></span> Golden Zipper Industrial Group. All rights reserved.</div>
-      <div style="opacity:.9">SNBET® · EasyFull®</div>
-    </div>
-  </footer>
-
-  <script>
-    // Footer year
-    document.getElementById("y").textContent = new Date().getFullYear();
-
-    // Mobile menu toggle
-    const burger = document.getElementById("burger");
-    const panel = document.getElementById("mobilePanel");
-    burger?.addEventListener("click", () => panel.classList.toggle("show"));
-
-    // Tabs filter
-    const tabs = Array.from(document.querySelectorAll(".tab"));
-    const cards = Array.from(document.querySelectorAll(".pcard"));
-
-    function setActiveTab(btn){
-      tabs.forEach(t => t.classList.remove("active"));
-      btn.classList.add("active");
-    }
-
-    function filterCards(cat){
-      cards.forEach(card => {
-        const c = card.getAttribute("data-cat");
-        const show = (cat === "all") || (c === cat);
-        card.style.display = show ? "" : "none";
-      });
-    }
-
-    tabs.forEach(btn => {
-      btn.addEventListener("click", () => {
-        const cat = btn.getAttribute("data-filter");
-        setActiveTab(btn);
-        filterCards(cat);
-      });
-    });
-  </script>
-</body>
-</html>
+    <footer id="contact" class="bg-black text-white py-24 px-6 md:px-12">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div>
+                <h2 class="text-3xl font-bold mb-6">Let's start a project.</h2>
+                <p class="text-gray-400 mb-8 max-w-sm
