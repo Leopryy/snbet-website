@@ -13,10 +13,10 @@
         }
         html { scroll-behavior: smooth; }
         
+        /* 导航栏下划线动画 */
         .nav-link {
             position: relative;
         }
-        
         .nav-link::after {
             content: '';
             position: absolute;
@@ -27,24 +27,23 @@
             background-color: #000;
             transition: width 0.3s ease;
         }
-        
         .nav-link:hover::after {
             width: 100%;
         }
         
+        /* 卡片悬停浮动效果 */
         .card-subtle-hover {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
         .card-subtle-hover:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
         }
         
+        /* 数据卡片悬停效果 */
         .stat-card {
             transition: all 0.3s ease;
         }
-        
         .stat-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
@@ -53,7 +52,6 @@
 </head>
 <body class="text-gray-800 bg-white">
 
-    <!-- Navigation -->
     <nav class="flex justify-between items-center py-6 px-8 md:px-16 fixed w-full bg-white z-50 shadow-sm">
         <div class="text-2xl font-semibold tracking-tight text-black">SNBET</div>
         <div class="hidden md:flex space-x-10 text-sm font-medium text-gray-700">
@@ -64,7 +62,6 @@
         <a href="#contact" class="px-6 py-2.5 bg-black text-white text-sm font-medium hover:bg-gray-800 transition">Contact Us</a>
     </nav>
 
-    <!-- Hero Section -->
     <header class="relative h-screen flex flex-col justify-center items-center text-center px-6 pt-20 bg-cover bg-center bg-no-repeat bg-fixed" 
             style="background-image: url('zipper.jpg');">
         
@@ -107,7 +104,6 @@
         </div>
     </header>
     
-    <!-- Products Section -->
     <section id="products" class="py-28 px-6 md:px-16 bg-white">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-20">
@@ -119,7 +115,6 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <!-- Metal Zippers -->
                 <div class="card-subtle-hover bg-white border border-gray-200 rounded-lg overflow-hidden">
                     <div class="aspect-[4/5] relative overflow-hidden bg-gray-50">
                         <img src="metal-zipper.jpg" alt="Premium Metal Zippers" class="w-full h-full object-cover object-top hover:scale-105 transition duration-700 ease-in-out">
@@ -136,7 +131,6 @@
                     </div>
                 </div>
 
-                <!-- Nylon & Vislon -->
                 <div class="card-subtle-hover bg-white border border-gray-200 rounded-lg overflow-hidden">
                     <div class="aspect-[4/5] relative overflow-hidden bg-gray-50">
                         <img src="nylon-zipper.jpg" alt="Nylon & Vislon Zippers" class="w-full h-full object-cover hover:scale-105 transition duration-700 ease-in-out">
@@ -153,10 +147,9 @@
                     </div>
                 </div>
 
-                <!-- Custom Sliders -->
                 <div class="card-subtle-hover bg-white border border-gray-200 rounded-lg overflow-hidden">
                     <div class="aspect-[4/5] relative overflow-hidden bg-gray-50">
-                        <img src="Slider.jpg" alt="Custom Sliders" class="w-full h-full object-cover object-left hover:scale-105 transition duration-700 ease-in-out">
+                        <img src="slider.jpg" alt="Custom Sliders" class="w-full h-full object-cover object-left hover:scale-105 transition duration-700 ease-in-out">
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-semibold mb-3">Custom Sliders</h3>
@@ -173,7 +166,6 @@
         </div>
     </section>
 
-    <!-- Manufacturing Excellence Section -->
     <section id="capability" class="py-28 bg-gray-50 px-6 md:px-16">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -185,9 +177,14 @@
                         With state-of-the-art facilities in Suzhou and Shenzhen, and offices in Canada, India, and Sri Lanka, we support global apparel brands with unmatched speed and consistency.
                     </p>
                     
-                    <p class="text-gray-600 mb-10 leading-relaxed">
+                    <p class="text-gray-600 mb-8 leading-relaxed">
                         Our in-house laboratories perform rigorous testing including Salt Spray, Washing Fastness, and Tensile Tests to ensure every product meets the highest industry standards.
                     </p>
+
+                    <a href="factory.html" class="inline-flex items-center text-sm font-bold text-black border-b-2 border-black pb-1 hover:text-gray-600 hover:border-gray-600 transition mb-10">
+                        VIEW FACTORY TOUR & LAB SPECS
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
 
                     <div class="space-y-5">
                         <div class="flex items-start space-x-4 p-4 bg-white rounded-lg border border-gray-200">
@@ -214,7 +211,6 @@
                     </div>
                 </div>
                 
-                <!-- Stats Grid -->
                 <div class="grid grid-cols-2 gap-6">
                     <div class="stat-card bg-white p-10 rounded-lg border border-gray-200">
                         <div class="text-5xl font-bold mb-3 text-gray-900">25+</div>
@@ -237,7 +233,6 @@
         </div>
     </section>
 
-    <!-- Clients Section -->
     <section id="clients" class="py-24 px-6 bg-white">
         <div class="max-w-6xl mx-auto text-center">
             <p class="text-sm text-gray-500 uppercase tracking-wider font-medium mb-4">Trusted By Global Brands</p>
@@ -253,7 +248,6 @@
         </div>
     </section>
 
-    <!-- Contact Footer -->
     <footer id="contact" class="bg-black text-white py-28 px-6 md:px-16">
         <div class="max-w-6xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
