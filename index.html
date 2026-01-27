@@ -13,41 +13,18 @@
         }
         html { scroll-behavior: smooth; }
         
-        /* 导航栏下划线动画 */
-        .nav-link {
-            position: relative;
-        }
+        .nav-link { position: relative; }
         .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #000;
-            transition: width 0.3s ease;
+            content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px;
+            background-color: #000; transition: width 0.3s ease;
         }
-        .nav-link:hover::after {
-            width: 100%;
-        }
+        .nav-link:hover::after { width: 100%; }
         
-        /* 卡片悬停浮动效果 */
-        .card-subtle-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card-subtle-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-        }
+        .card-subtle-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-subtle-hover:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); }
         
-        /* 数据卡片悬停效果 */
-        .stat-card {
-            transition: all 0.3s ease;
-        }
-        .stat-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-        }
+        .stat-card { transition: all 0.3s ease; }
+        .stat-card:hover { transform: translateY(-4px); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08); }
     </style>
 </head>
 <body class="text-gray-800 bg-white">
@@ -64,26 +41,20 @@
 
     <header class="relative h-screen flex flex-col justify-center items-center text-center px-6 pt-20 bg-cover bg-center bg-no-repeat bg-fixed" 
             style="background-image: url('zipper.jpg');">
-        
         <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/75 to-black/70 z-0"></div>
-
         <div class="relative z-10 max-w-4xl mx-auto">
-            
             <p class="text-sm md:text-base text-gray-300 font-medium tracking-[0.25em] uppercase mb-8 animate-fade-in">
                 SNBET Group • Established 2001
             </p>
-
             <h1 class="text-5xl md:text-7xl font-light tracking-tight mb-10 text-white leading-tight">
                 The Invisible Detail<br>
                 <span class="font-semibold">Visible Quality</span>
             </h1>
-
             <div class="mb-12 space-y-8">
                 <p class="text-lg md:text-xl text-gray-200 font-light leading-relaxed max-w-2xl mx-auto">
                     Your trusted global partner for premium zipper solutions. 
                     Combining <span class="text-white font-medium">25 years</span> of engineering precision with unwavering commitment to safety and durability.
                 </p>
-                
                 <div class="max-w-2xl mx-auto bg-white/5 backdrop-blur-sm border border-white/20 rounded-lg p-6">
                     <p class="text-sm text-gray-300 italic leading-relaxed">
                         "Our mission is to bridge industrial precision with fashion excellence. 
@@ -91,16 +62,10 @@
                     </p>
                 </div>
             </div>
-
             <div class="flex flex-col md:flex-row gap-5 justify-center">
-                <a href="#products" class="px-10 py-4 bg-white text-black text-sm font-semibold tracking-wide hover:bg-gray-100 transition shadow-lg">
-                    EXPLORE SOLUTIONS
-                </a>
-                <a href="#contact" class="px-10 py-4 bg-transparent border-2 border-white text-white text-sm font-semibold tracking-wide hover:bg-white hover:text-black transition">
-                    GET IN TOUCH
-                </a>
+                <a href="#products" class="px-10 py-4 bg-white text-black text-sm font-semibold tracking-wide hover:bg-gray-100 transition shadow-lg">EXPLORE SOLUTIONS</a>
+                <a href="#contact" class="px-10 py-4 bg-transparent border-2 border-white text-white text-sm font-semibold tracking-wide hover:bg-white hover:text-black transition">GET IN TOUCH</a>
             </div>
-
         </div>
     </header>
     
@@ -113,7 +78,6 @@
                     From heavy-duty metal to lightweight nylon, we provide secure fastening solutions for the global apparel industry.
                 </p>
             </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <div class="card-subtle-hover bg-white border border-gray-200 rounded-lg overflow-hidden">
                     <div class="aspect-[4/5] relative overflow-hidden bg-gray-50">
@@ -121,41 +85,33 @@
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-semibold mb-3">Metal Zippers</h3>
-                        <p class="text-gray-600 leading-relaxed mb-4">
-                            High durability for denim and jackets. Available in Gold, Silver, and Antique finishes.
-                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-4">High durability for denim and jackets. Available in Gold, Silver, and Antique finishes.</p>
                         <div class="pt-4 border-t border-gray-200">
                             <span class="text-sm font-medium text-gray-500">Capacity:</span>
                             <span class="text-sm font-semibold text-black ml-2">50 Million / Year</span>
                         </div>
                     </div>
                 </div>
-
                 <div class="card-subtle-hover bg-white border border-gray-200 rounded-lg overflow-hidden">
                     <div class="aspect-[4/5] relative overflow-hidden bg-gray-50">
                         <img src="nylon-zipper.jpg" alt="Nylon & Vislon Zippers" class="w-full h-full object-cover hover:scale-105 transition duration-700 ease-in-out">
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-semibold mb-3">Nylon & Vislon</h3>
-                        <p class="text-gray-600 leading-relaxed mb-4">
-                            Lightweight and versatile. Perfect for sportswear and casual garments. Smooth operation guaranteed.
-                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-4">Lightweight and versatile. Perfect for sportswear and casual garments. Smooth operation guaranteed.</p>
                         <div class="pt-4 border-t border-gray-200">
                             <span class="text-sm font-medium text-gray-500">Capacity:</span>
                             <span class="text-sm font-semibold text-black ml-2">75 Million / Year</span>
                         </div>
                     </div>
                 </div>
-
                 <div class="card-subtle-hover bg-white border border-gray-200 rounded-lg overflow-hidden">
                     <div class="aspect-[4/5] relative overflow-hidden bg-gray-50">
                         <img src="slider.jpg" alt="Custom Sliders" class="w-full h-full object-cover object-left hover:scale-105 transition duration-700 ease-in-out">
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-semibold mb-3">Custom Sliders</h3>
-                        <p class="text-gray-600 leading-relaxed mb-4">
-                            Professional design team for custom pullers. From 3D shapes (Panda, Cat) to branded logos.
-                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-4">Professional design team for custom pullers. From 3D shapes (Panda, Cat) to branded logos.</p>
                         <div class="pt-4 border-t border-gray-200">
                             <span class="text-sm font-medium text-gray-500">Service:</span>
                             <span class="text-sm font-semibold text-black ml-2">OEM & ODM Design</span>
@@ -174,7 +130,7 @@
                     <div class="w-16 h-0.5 bg-black mb-8"></div>
 
                     <p class="text-gray-700 text-lg mb-8 leading-relaxed">
-                        With state-of-the-art facilities in Suzhou and Shenzhen, and offices in Canada, India, and Sri Lanka, we support global apparel brands with unmatched speed and consistency.
+                        With our state-of-the-art facility in <strong>Suzhou</strong>, and offices in Canada, India, and Sri Lanka, we support global apparel brands with unmatched speed and consistency.
                     </p>
                     
                     <p class="text-gray-600 mb-8 leading-relaxed">
@@ -237,7 +193,6 @@
         <div class="max-w-6xl mx-auto text-center">
             <p class="text-sm text-gray-500 uppercase tracking-wider font-medium mb-4">Trusted By Global Brands</p>
             <div class="w-16 h-0.5 bg-black mx-auto mb-16"></div>
-
             <div class="flex flex-wrap justify-center items-center gap-16">
                 <span class="text-2xl font-semibold text-gray-400 hover:text-gray-900 transition cursor-pointer">CHICCO</span>
                 <span class="text-2xl font-semibold text-gray-400 hover:text-gray-900 transition cursor-pointer">TARGET</span>
@@ -256,7 +211,6 @@
                     <p class="text-gray-400 text-lg mb-12 max-w-md leading-relaxed">
                         Need a quote for zippers or custom sliders? Reach out to our specialized teams directly.
                     </p>
-                    
                     <div class="space-y-8">
                         <div class="border-l-2 border-gray-700 pl-6">
                             <span class="text-gray-500 text-xs uppercase tracking-wider block mb-2">For Zipper Inquiries</span>
@@ -266,13 +220,11 @@
                         <div class="border-l-2 border-gray-700 pl-6">
                             <span class="text-gray-500 text-xs uppercase tracking-wider block mb-2">Headquarters</span>
                             <p class="text-gray-400 leading-relaxed">
-                                Building 111, No. 1388, East Avenue<br>
-                                Suzhou, Jiangsu, China
+                                Building 111, No. 1388, East Avenue<br>Suzhou, Jiangsu, China
                             </p>
                         </div>
                     </div>
                 </div>
-
                 <div class="bg-gray-900 p-10 rounded-lg border border-gray-800">
                     <h3 class="text-xl font-semibold mb-6">Send us a message</h3>
                     <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST" class="space-y-5">
@@ -288,18 +240,14 @@
                             <label class="block text-xs text-gray-500 uppercase tracking-wider mb-2">Message</label>
                             <textarea name="message" rows="4" required class="w-full bg-black border border-gray-700 p-4 text-sm focus:border-white focus:outline-none transition text-white rounded resize-none"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-white text-black font-semibold py-4 hover:bg-gray-200 transition rounded">
-                            SEND INQUIRY
-                        </button>
+                        <button type="submit" class="w-full bg-white text-black font-semibold py-4 hover:bg-gray-200 transition rounded">SEND INQUIRY</button>
                     </form>
                 </div>
             </div>
-            
             <div class="text-center text-gray-600 text-sm mt-20 pt-10 border-t border-gray-800">
                 © 2025 SNBET Group. All Rights Reserved.
             </div>
         </div>
     </footer>
-
 </body>
 </html>
