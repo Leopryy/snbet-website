@@ -3,96 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Factory & Certification | SNBET Group</title>
+    <title>SNBET Group | Global Zipper Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { 
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        html { scroll-behavior: smooth; }
+        
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px;
+            background-color: #000; transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+        
+        .card-subtle-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-subtle-hover:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); }
+        
+        .stat-card { transition: all 0.3s ease; }
+        .stat-card:hover { transform: translateY(-4px); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08); }
     </style>
 </head>
 <body class="text-gray-800 bg-white">
 
-    <nav class="py-6 px-6 md:px-12 border-b border-gray-100 flex justify-between items-center bg-white">
-        <a href="index.html" class="text-xl font-bold tracking-tight">SNBET</a>
-        <a href="index.html" class="text-sm font-medium text-gray-500 hover:text-black transition">← Back to Home</a>
+    <nav class="flex justify-between items-center py-6 px-8 md:px-16 fixed w-full bg-white z-50 shadow-sm">
+        <div class="text-2xl font-semibold tracking-tight text-black">SNBET</div>
+        <div class="hidden md:flex space-x-10 text-sm font-medium text-gray-700">
+            <a href="#products" class="nav-link hover:text-black transition">PRODUCTS</a>
+            <a href="#capability" class="nav-link hover:text-black transition">MANUFACTURING</a>
+            <a href="#clients" class="nav-link hover:text-black transition">CLIENTS</a>
+        </div>
+        <a href="#contact" class="px-6 py-2.5 bg-black text-white text-sm font-medium hover:bg-gray-800 transition">Contact Us</a>
     </nav>
 
-    <header class="py-20 px-6 bg-gray-50 text-center">
-        <h1 class="text-4xl md:text-5xl font-light mb-6">Our Manufacturing Hub</h1>
-        <div class="w-12 h-0.5 bg-black mx-auto mb-6"></div>
-        <p class="max-w-2xl mx-auto text-gray-500">
-            A closer look at our production facilities in Suzhou, where precision meets capacity.
-        </p>
-    </header>
-
-    <section class="py-20 px-6 md:px-12">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-2xl font-bold mb-10">Global Footprint</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="bg-white border border-gray-100 p-8 shadow-sm">
-                    <h3 class="text-xl font-medium mb-2">Headquarters & Factory</h3>
-                    <p class="text-sm text-gray-500 uppercase tracking-widest mb-4">Suzhou, China</p>
-                    <p class="text-gray-600 leading-relaxed text-sm">
-                        Our main facility handles large-scale production of Metal and Vislon zippers. 
-                        Equipped with automated mounting and plating lines.
-                    </p>
-                </div>
-                <div class="bg-white border border-gray-100 p-8 shadow-sm">
-                    <h3 class="text-xl font-medium mb-2">Shenzhen Branch</h3>
-                    <p class="text-sm text-gray-500 uppercase tracking-widest mb-4">Shenzhen, China</p>
-                    <p class="text-gray-600 leading-relaxed text-sm">
-                        Strategically located to serve our partners in southern China and Southeast Asia. Focuses on quick-turn nylon zippers and trims.
+    <header class="relative h-screen flex flex-col justify-center items-center text-center px-6 pt-20 bg-cover bg-center bg-no-repeat bg-fixed" 
+            style="background-image: url('zipper.jpg');">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/75 to-black/70 z-0"></div>
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <p class="text-sm md:text-base text-gray-300 font-medium tracking-[0.25em] uppercase mb-8 animate-fade-in">
+                SNBET Group • Established 2001
+            </p>
+            <h1 class="text-5xl md:text-7xl font-light tracking-tight mb-10 text-white leading-tight">
+                The Invisible Detail<br>
+                <span class="font-semibold">Visible Quality</span>
+            </h1>
+            <div class="mb-12 space-y-8">
+                <p class="text-lg md:text-xl text-gray-200 font-light leading-relaxed max-w-2xl mx-auto">
+                    Your trusted global partner for premium zipper solutions. 
+                    Combining <span class="text-white font-medium">25 years</span> of engineering precision with unwavering commitment to safety and durability.
+                </p>
+                <div class="max-w-2xl mx-auto bg-white/5 backdrop-blur-sm border border-white/20 rounded-lg p-6">
+                    <p class="text-sm text-gray-300 italic leading-relaxed">
+                        "Our mission is to bridge industrial precision with fashion excellence. 
+                        With 'Safety First' as our standard and 'Open Mind, Close Cooperation' as our philosophy."
                     </p>
                 </div>
             </div>
-            
-            <div class="mt-12 bg-black text-white p-8 md:p-12 text-center">
-                <h3 class="text-lg font-bold mb-4">Global Support Offices</h3>
-                <div class="flex flex-wrap justify-center gap-8 md:gap-16 text-sm text-gray-400">
-                    <span>🇨🇦 Canada</span>
-                    <span>🇮🇳 India</span>
-                </div>
+            <div class="flex flex-col md:flex-row gap-5 justify-center">
+                <a href="#products" class="px-10 py-4 bg-white text-black text-sm font-semibold tracking-wide hover:bg-gray-100 transition shadow-lg">EXPLORE SOLUTIONS</a>
+                <a href="#contact" class="px-10 py-4 bg-transparent border-2 border-white text-white text-sm font-semibold tracking-wide hover:bg-white hover:text-black transition">GET IN TOUCH</a>
             </div>
         </div>
-    </section>
-
-    <section class="py-20 px-6 md:px-12 bg-gray-50">
-        <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-                <div>
-                    <h2 class="text-2xl font-bold mb-6">In-House Laboratory</h2>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Quality is not just checked; it's engineered. Our internal laboratory is equipped to perform international standard tests before any shipment leaves our dock.
-                    </p>
-                    <ul class="space-y-3 text-sm text-gray-700">
-                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-black rounded-full mr-3"></span>Color Fastness (Washing, Rubbing, Perspiration)</li>
-                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-black rounded-full mr-3"></span>Dimensional Stability Tests</li>
-                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-black rounded-full mr-3"></span>Tensile Strength (Chain & Slider)</li>
-                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-black rounded-full mr-3"></span>Salt Spray Corrosion Test</li>
-                    </ul>
+    </header>
+    
+    <section id="products" class="py-28 px-6 md:px-16 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-light mb-4 tracking-tight">Our Solutions</h2>
+                <div class="w-16 h-0.5 bg-black mx-auto mb-6"></div>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                    From heavy-duty metal to lightweight nylon, we provide secure fastening solutions for the global apparel industry.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="card-subtle-hover bg-white border border-gray-200 rounded-lg overflow-hidden">
+                    <div class="aspect-[4/5] relative overflow-hidden bg-gray-50">
+                        <img src="metal-zipper.jpg" alt="Premium Metal Zippers" class="w-full h-full object-cover object-top hover:scale-105 transition duration-700 ease-in-out">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold mb-3">Metal Zippers</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">High durability for denim and jackets. Available in Gold, Silver, and Antique finishes.</p>
+                        <div class="pt-4 border-t border-gray-200">
+                            <span class="text-sm font-medium text-gray-500">Capacity:</span>
+                            <span class="text-sm font-semibold text-black ml-2">50 Million / Year</span>
+                        </div>
+                    </div>
                 </div>
-                
-                <div>
-                    <h2 class="text-2xl font-bold mb-6">Testing Standards</h2>
-                    <p class="text-gray-600 mb-6">
-                        We comply with major international testing protocols to ensure your zippers withstand the toughest conditions.
-                    </p>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="border border-gray-200 bg-white p-4 text-center">
-                            <span class="block font-bold text-black">ASTM D2061</span>
-                            <span class="text-xs text-gray-400">USA Standard</span>
+                <div class="card-subtle-hover bg-white border border-gray-200 rounded-lg overflow-hidden">
+                    <div class="aspect-[4/5] relative overflow-hidden bg-gray-50">
+                        <img src="nylon-zipper.jpg" alt="Nylon & Vislon Zippers" class="w-full h-full object-cover hover:scale-105 transition duration-700 ease-in-out">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold mb-3">Nylon & Vislon</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">Lightweight and versatile. Perfect for sportswear and casual garments. Smooth operation guaranteed.</p>
+                        <div class="pt-4 border-t border-gray-200">
+                            <span class="text-sm font-medium text-gray-500">Capacity:</span>
+                            <span class="text-sm font-semibold text-black ml-2">75 Million / Year</span>
                         </div>
-                        <div class="border border-gray-200 bg-white p-4 text-center">
-                            <span class="block font-bold text-black">BS 3084</span>
-                            <span class="text-xs text-gray-400">British Standard</span>
-                        </div>
-                        <div class="border border-gray-200 bg-white p-4 text-center">
-                            <span class="block font-bold text-black">DIN 3416</span>
-                            <span class="text-xs text-gray-400">German Standard</span>
-                        </div>
-                        <div class="border border-gray-200 bg-white p-4 text-center">
-                            <span class="block font-bold text-black">JIS S3015</span>
-                            <span class="text-xs text-gray-400">Japanese Standard</span>
+                    </div>
+                </div>
+                <div class="card-subtle-hover bg-white border border-gray-200 rounded-lg overflow-hidden">
+                    <div class="aspect-[4/5] relative overflow-hidden bg-gray-50">
+                        <img src="slider.jpg" alt="Custom Sliders" class="w-full h-full object-cover object-left hover:scale-105 transition duration-700 ease-in-out">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold mb-3">Custom Sliders</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">Professional design team for custom pullers. From 3D shapes (Panda, Cat) to branded logos.</p>
+                        <div class="pt-4 border-t border-gray-200">
+                            <span class="text-sm font-medium text-gray-500">Service:</span>
+                            <span class="text-sm font-semibold text-black ml-2">OEM & ODM Design</span>
                         </div>
                     </div>
                 </div>
@@ -100,13 +122,132 @@
         </div>
     </section>
 
-    <footer class="bg-black text-white py-12 text-center text-sm">
-        <p class="text-gray-500 mb-4">Want to visit our facility?</p>
-        <a href="index.html#contact" class="inline-block bg-white text-black px-6 py-2 font-bold hover:bg-gray-200 transition">CONTACT SALES</a>
-        <div class="mt-10 text-gray-700 text-xs">
-            © 2025 SNBET Group. Factory Tour Page.
+    <section id="capability" class="py-28 bg-gray-50 px-6 md:px-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-light mb-6 tracking-tight">Manufacturing Excellence</h2>
+                    <div class="w-16 h-0.5 bg-black mb-8"></div>
+
+                    <p class="text-gray-700 text-lg mb-8 leading-relaxed">
+                        With our state-of-the-art facility in <strong>Suzhou</strong>, and offices in Canada, India, and Sri Lanka, we support global apparel brands with unmatched speed and consistency.
+                    </p>
+                    
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Our in-house laboratories perform rigorous testing including Salt Spray, Washing Fastness, and Tensile Tests to ensure every product meets the highest industry standards.
+                    </p>
+
+                    <a href="factory.html" class="inline-flex items-center text-sm font-bold text-black border-b-2 border-black pb-1 hover:text-gray-600 hover:border-gray-600 transition mb-10">
+                        VIEW FACTORY TOUR & LAB SPECS
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+
+                    <div class="space-y-5">
+                        <div class="flex items-start space-x-4 p-4 bg-white rounded-lg border border-gray-200">
+                            <div class="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Oeko-Tex Standard 100 Class I</h4>
+                                <p class="text-sm text-gray-600">Certified safe for baby products and sensitive skin</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 p-4 bg-white rounded-lg border border-gray-200">
+                            <div class="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Disney FAMA Authorized Facility</h4>
+                                <p class="text-sm text-gray-600">Trusted partner for licensed character products</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 p-4 bg-white rounded-lg border border-gray-200">
+                            <div class="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Internal Lab Testing</h4>
+                                <p class="text-sm text-gray-600">Comprehensive Salt Spray and Tensile strength analysis</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="stat-card bg-white p-10 rounded-lg border border-gray-200">
+                        <div class="text-5xl font-bold mb-3 text-gray-900">25+</div>
+                        <div class="text-xs text-gray-600 uppercase tracking-wider font-medium">Years Experience</div>
+                    </div>
+                    <div class="stat-card bg-white p-10 rounded-lg border border-gray-200">
+                        <div class="text-5xl font-bold mb-3 text-gray-900">125M</div>
+                        <div class="text-xs text-gray-600 uppercase tracking-wider font-medium">Annual Zippers</div>
+                    </div>
+                    <div class="stat-card bg-white p-10 rounded-lg border border-gray-200">
+                        <div class="text-5xl font-bold mb-3 text-gray-900">50M</div>
+                        <div class="text-xs text-gray-600 uppercase tracking-wider font-medium">Metal Zippers</div>
+                    </div>
+                    <div class="stat-card bg-white p-10 rounded-lg border border-gray-200">
+                        <div class="text-5xl font-bold mb-3 text-gray-900">100%</div>
+                        <div class="text-xs text-gray-600 uppercase tracking-wider font-medium">Quality Check</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="clients" class="py-24 px-6 bg-white">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-sm text-gray-500 uppercase tracking-wider font-medium mb-4">Trusted By Global Brands</p>
+            <div class="w-16 h-0.5 bg-black mx-auto mb-16"></div>
+            <div class="flex flex-wrap justify-center items-center gap-16">
+                <span class="text-2xl font-semibold text-gray-400 hover:text-gray-900 transition cursor-pointer">CHICCO</span>
+                <span class="text-2xl font-semibold text-gray-400 hover:text-gray-900 transition cursor-pointer">TARGET</span>
+                <span class="text-2xl font-semibold text-gray-400 hover:text-gray-900 transition cursor-pointer">HUMMEL</span>
+                <span class="text-2xl font-semibold text-gray-400 hover:text-gray-900 transition cursor-pointer">COTTON:ON</span>
+                <span class="text-2xl font-semibold text-gray-400 hover:text-gray-900 transition cursor-pointer">KIDILIZ</span>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-black text-white py-28 px-6 md:px-16">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-semibold mb-8 leading-tight">Let's start a project.</h2>
+                    <p class="text-gray-400 text-lg mb-12 max-w-md leading-relaxed">
+                        Need a quote for zippers or custom sliders? Reach out to our specialized teams directly.
+                    </p>
+                    <div class="space-y-8">
+                        <div class="border-l-2 border-gray-700 pl-6">
+                            <span class="text-gray-500 text-xs uppercase tracking-wider block mb-2">For Zipper Inquiries</span>
+                            <p class="font-semibold text-lg mb-1">Wei Pang / Frank Xu</p>
+                            <a href="mailto:frankxu@goldenzipper.com.cn" class="text-gray-400 hover:text-white transition">frankxu@goldenzipper.com.cn</a>
+                        </div>
+                        <div class="border-l-2 border-gray-700 pl-6">
+                            <span class="text-gray-500 text-xs uppercase tracking-wider block mb-2">Headquarters</span>
+                            <p class="text-gray-400 leading-relaxed">
+                                Building 111, No. 1388, East Avenue<br>Suzhou, Jiangsu, China
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-900 p-10 rounded-lg border border-gray-800">
+                    <h3 class="text-xl font-semibold mb-6">Send us a message</h3>
+                    <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST" class="space-y-5">
+                        <div>
+                            <label class="block text-xs text-gray-500 uppercase tracking-wider mb-2">Full Name</label>
+                            <input type="text" name="name" required class="w-full bg-black border border-gray-700 p-4 text-sm focus:border-white focus:outline-none transition text-white rounded">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-500 uppercase tracking-wider mb-2">Email Address</label>
+                            <input type="email" name="email" required class="w-full bg-black border border-gray-700 p-4 text-sm focus:border-white focus:outline-none transition text-white rounded">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-500 uppercase tracking-wider mb-2">Message</label>
+                            <textarea name="message" rows="4" required class="w-full bg-black border border-gray-700 p-4 text-sm focus:border-white focus:outline-none transition text-white rounded resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-white text-black font-semibold py-4 hover:bg-gray-200 transition rounded">SEND INQUIRY</button>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center text-gray-600 text-sm mt-20 pt-10 border-t border-gray-800">
+                © 2025 SNBET Group. All Rights Reserved.
+            </div>
         </div>
     </footer>
-
 </body>
 </html>
