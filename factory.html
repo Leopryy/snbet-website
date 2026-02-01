@@ -15,7 +15,7 @@
         .swiper-button-next:hover, .swiper-button-prev:hover { color: white !important; }
         .swiper-pagination-bullet-active { background-color: white !important; }
         
-        /* Logo 灰度效果 (可选：让 Logo 看起来更统一，鼠标放上去变彩色) */
+        /* Logo 交互效果 */
         .cert-logo { filter: grayscale(100%); opacity: 0.7; transition: all 0.3s ease; }
         .cert-logo:hover { filter: grayscale(0%); opacity: 1; transform: translateY(-5px); }
     </style>
@@ -63,8 +63,8 @@
                 </div>
             </div>
             
-            <div class="relative aspect-square rounded-lg shadow-2xl overflow-hidden group">
-                <div class="swiper mySwiper h-full w-full bg-gray-900">
+            <div class="relative aspect-square rounded-lg shadow-2xl overflow-visible md:overflow-hidden group">
+                <div class="swiper mySwiper h-full w-full bg-gray-900 rounded-lg overflow-hidden">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide"><img src="factory-slide-1.jpg" class="w-full h-full object-cover"></div>
                         <div class="swiper-slide"><img src="factory-slide-2.jpg" class="w-full h-full object-cover"></div>
@@ -74,9 +74,10 @@
                     <div class="swiper-button-prev hidden md:flex"></div>
                     <div class="swiper-pagination"></div>
                 </div>
-                <div class="absolute -bottom-6 -left-6 bg-black text-white p-8 shadow-lg hidden md:block z-20">
-                    <p class="text-3xl font-bold">100%</p>
-                    <p class="text-xs uppercase tracking-widest text-gray-400">Automated Inspection</p>
+
+                <div class="absolute -bottom-6 -left-6 bg-black text-white w-48 h-32 flex flex-col justify-center items-center shadow-lg hidden md:flex z-20 transition-all duration-500">
+                    <p id="dynamic-word" class="text-2xl font-bold tracking-wider">PRECISION</p>
+                    <p id="dynamic-sub" class="text-[10px] uppercase tracking-[0.2em] text-gray-400 mt-1">Automated Lines</p>
                 </div>
             </div>
         </div>
@@ -88,7 +89,6 @@
             <h2 class="text-3xl md:text-4xl font-light mb-16 tracking-tight">Verified by Global Standards</h2>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-12 items-start">
-                
                 <div class="flex flex-col items-center">
                     <div class="h-24 flex items-center justify-center mb-6">
                         <img src="logo-sgs.png" alt="SGS Logo" class="max-h-16 w-auto cert-logo">
@@ -96,7 +96,6 @@
                     <h4 class="font-bold text-gray-900">SGS Verified</h4>
                     <p class="text-sm text-gray-500 mt-2">Independently Audited</p>
                 </div>
-
                 <div class="flex flex-col items-center">
                     <div class="h-24 flex items-center justify-center mb-6">
                         <img src="logo-bsci.png" alt="Amfori BSCI Logo" class="max-h-16 w-auto cert-logo">
@@ -104,7 +103,6 @@
                     <h4 class="font-bold text-gray-900">Amfori BSCI</h4>
                     <p class="text-sm text-gray-500 mt-2">Social Compliance "A" Rating</p>
                 </div>
-
                 <div class="flex flex-col items-center">
                     <div class="h-24 flex items-center justify-center mb-6">
                         <img src="logo-disney.png" alt="Disney Logo" class="max-h-16 w-auto cert-logo">
@@ -112,7 +110,6 @@
                     <h4 class="font-bold text-gray-900">Disney FAMA</h4>
                     <p class="text-sm text-gray-500 mt-2">Authorized Facility</p>
                 </div>
-
                 <div class="flex flex-col items-center">
                     <div class="h-24 flex items-center justify-center mb-6">
                         <img src="logo-oeko.png" alt="Oeko-Tex Logo" class="max-h-20 w-auto cert-logo">
@@ -120,7 +117,6 @@
                     <h4 class="font-bold text-gray-900">Standard 100</h4>
                     <p class="text-sm text-gray-500 mt-2">Class I (Baby Safe)</p>
                 </div>
-
             </div>
             
             <div class="mt-16 pt-10 border-t border-gray-200">
@@ -150,13 +146,47 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+        // 定义每张图片对应的文字
+        const slideData = [
+            { title: "PRECISION", sub: "Automated Lines" },  // 对应 factory-slide-1.jpg
+            { title: "CAPACITY", sub: "125M Annual Output" }, // 对应 factory-slide-2.jpg
+            { title: "QUALITY", sub: "100% Inspection" }     // 对应 factory-slide-3.jpg
+        ];
+
         var swiper = new Swiper(".mySwiper", {
             spaceBetween: 0,
-            effect: "fade",
+            effect: "fade", // 淡入淡出效果
             loop: true,
-            autoplay: { delay: 3500, disableOnInteraction: false },
+            autoplay: {
+                delay: 5000, // 5秒切换一次，时间更长
+                disableOnInteraction: false,
+            },
             pagination: { el: ".swiper-pagination", clickable: true },
             navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+            
+            // ★★★ 监听切换事件，动态修改文字 ★★★
+            on: {
+                slideChange: function () {
+                    // 获取当前是第几张图 (realIndex 用于处理循环播放)
+                    const index = this.realIndex;
+                    const data = slideData[index % slideData.length];
+                    
+                    // 更新黑框里的文字
+                    const titleEl = document.getElementById('dynamic-word');
+                    const subEl = document.getElementById('dynamic-sub');
+                    
+                    // 简单的淡出淡入动画效果
+                    titleEl.style.opacity = 0;
+                    subEl.style.opacity = 0;
+                    
+                    setTimeout(() => {
+                        titleEl.innerText = data.title;
+                        subEl.innerText = data.sub;
+                        titleEl.style.opacity = 1;
+                        subEl.style.opacity = 1;
+                    }, 200);
+                }
+            }
         });
     </script>
 
